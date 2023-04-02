@@ -1,4 +1,4 @@
-import javax.swing.JButton; // SHIT + F6 NO INTRO N AQUI
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -31,7 +31,7 @@ public class LogFit  extends JFrame{
      JLabel lblPesoAtual;
      JTextField txtPesoAtual;
 
-     JLabel lblPesoIdeal;
+     JLabel lblPesoIdeal; // essa aqui seria legal fazer o calculo no objeto e só mostrar na tela quando o cara entrar na conta dele
 
      JLabel lblAltura;
      JTextField txtAltura;
@@ -44,7 +44,7 @@ public class LogFit  extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
         setLayout(null);
 
-
+        
         // NOME
         lblNome = new JLabel("Nome");
         lblNome.setSize(100,30);
@@ -64,18 +64,9 @@ public class LogFit  extends JFrame{
         txtIdade.setSize(200,30);
         txtIdade.setLocation(100, 100);
         add(txtIdade);
-        
-        // AnoMatricula
-        lblMatricula = new JLabel("Cargo");
-        lblMatricula.setSize(100, 30);
-        lblMatricula.setLocation(30, 150);
-        add(lblMatricula);
-        txtMatricula = new JTextField();
-        txtMatricula.setSize(200,30);
-        txtMatricula.setLocation(100, 150);
-        add(txtMatricula);
 
-        lblPesoAtual = new JLabel("Cargo");
+        // Peso Atual
+        lblPesoAtual = new JLabel("Entre com seu Peso");
         lblPesoAtual.setSize(100, 30);
         lblPesoAtual.setLocation(30, 150);
         add(lblPesoAtual);
@@ -84,11 +75,11 @@ public class LogFit  extends JFrame{
         txtPesoAtual.setLocation(100, 150);
         add(txtPesoAtual);
                 
-        // Sexo
+        // Isso é a caixa de sexo 
         genero.setSize(100,30);
         genero.setLocation(500,50);
         add(genero);
-        String selectedSexo = (String) genero.getSelectedItem();
+        //String selectedSexo = (String) genero.getSelectedItem();
     }
     public static void main(String[] args) {
         new LogFit().setVisible(true);

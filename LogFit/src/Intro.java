@@ -19,16 +19,16 @@ public class Intro extends JFrame implements ActionListener{
      setLocationRelativeTo(null); // Centraliza o formulario
      setTitle("Cadastro de funcionários"); 
      setDefaultCloseOperation(EXIT_ON_CLOSE); 
-     setLayout(null);        
-
+     setLayout(null);      
+     
      // Login
-     lblLogin = new JLabel("Já pssui uma conta: ");
-     lblLogin.setSize(100,30); 
-     lblLogin.setLocation(30, 150);
+     lblLogin = new JLabel("Já posui uma conta: ");
+     lblLogin.setSize(150,30); 
+     lblLogin.setLocation(20, 30);
      add(lblLogin);
      btnLogin = new JButton("Login");
      btnLogin.setSize(100,30);
-     btnLogin.setLocation(130,10);
+     btnLogin.setLocation(150,20);
      btnLogin.addActionListener(this);
      add(btnLogin);
 
@@ -36,11 +36,11 @@ public class Intro extends JFrame implements ActionListener{
      // Cadastro
      lblCiarConta = new JLabel("É novo por aqui:");
      lblCiarConta.setSize(100,30); 
-     lblCiarConta.setLocation(100, 10);
+     lblCiarConta.setLocation(20, 150);
      add(lblCiarConta);
      btnCriarConta = new JButton("Criar conta");
      btnCriarConta.setSize(100,30);
-     btnCriarConta.setLocation(100,150);
+     btnCriarConta.setLocation(150,150);
      btnCriarConta.addActionListener(this); 
      add(btnCriarConta);
     }
