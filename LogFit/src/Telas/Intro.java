@@ -7,8 +7,6 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import java.sql.Connection;
-import java.sql.Statement;
 
 public class Intro extends JFrame implements ActionListener {
 
@@ -73,11 +71,6 @@ public class Intro extends JFrame implements ActionListener {
         //cria a variavel para a imagem
 
         new Intro().setVisible(true);
-
-        //conexão com o banco de dados
-        Connection conexao;
-        Statement st;
-
     }
 
     @Override
