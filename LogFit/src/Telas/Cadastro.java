@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
-public class LogFit  extends JFrame{
+public class Cadastro  extends JFrame{
     
 //variaveis de String 
      JLabel lblNome;
@@ -38,7 +38,7 @@ public class LogFit  extends JFrame{
      JLabel lblAltura;
      JTextField txtAltura;
 
-     public LogFit(){
+     public Cadastro(){
          // Tamanho do formulario principal
         setSize(1000, 400); 
         setLocationRelativeTo(null); // Centraliza o formulario
@@ -84,7 +84,7 @@ public class LogFit  extends JFrame{
         //String selectedSexo = (String) genero.getSelectedItem();
     }
     public static void main(String[] args) {
-        new LogFit().setVisible(true);
+        new Cadastro().setVisible(true);
     }
     
 }

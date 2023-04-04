@@ -83,7 +83,7 @@ public class Intro extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) { // ação do botão
         if (e.getSource() == btnCriarConta) {
-            new cadastro().setVisible(true); // chama o formulario de criar conta
+            new Cadastro().setVisible(true); // chama o formulario de criar conta
             dispose(); // fecha ao clicar no botão
         }
 
