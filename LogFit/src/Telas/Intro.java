@@ -1,60 +1,89 @@
 package Telas;
 
-// Aqui vei ser a tela de inicio tlg pedindo pra fazer login ou criar senha
-
+// Aqui vai ser a tela de inicio tlg pedindo pra fazer login ou criar senha
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.sql.Connection;
+import java.sql.Statement;
 
-public class Intro extends JFrame implements ActionListener{
+public class Intro extends JFrame implements ActionListener {
+
+    
     // Botar isso aq depois
-     JLabel lblLogin;
-     JButton btnLogin;
-
-     JLabel lblCiarConta;
-     JButton btnCriarConta;
+    JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta;
+    JButton btnLogin, btnCriarConta;
+    JTextField txtNome, txtSenha;
 
     public Intro() {
-     setSize(500, 400);
-     setLocationRelativeTo(null); // Centraliza o formulario
-     setTitle("Cadastro de funcionários"); 
-     setDefaultCloseOperation(EXIT_ON_CLOSE); 
-     setLayout(null);      
-     
-     // Login
-     lblLogin = new JLabel("Já posui uma conta: ");
-     lblLogin.setSize(150,30); 
-     lblLogin.setLocation(20, 30);
-     add(lblLogin);
-     btnLogin = new JButton("Login");
-     btnLogin.setSize(100,30);
-     btnLogin.setLocation(150,20);
-     btnLogin.addActionListener(this);
-     add(btnLogin);
+        setSize(500, 600);
+        setLocationRelativeTo(null); // Centraliza o formulario
+        setTitle("Login");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(null);
+        // Login
+        lblLogin = new JLabel("Já posui uma conta: ");
+        lblLogin.setSize(150, 30);
+        lblLogin.setLocation(140, 100);
+        add(lblLogin);
 
+        lblUsuario = new JLabel("Usuario:");
+        lblUsuario.setSize(150, 30);
+        lblUsuario.setLocation(40, 130);
+        add(lblUsuario);
 
-     // Cadastro
-     lblCiarConta = new JLabel("É novo por aqui:");
-     lblCiarConta.setSize(100,30); 
-     lblCiarConta.setLocation(20, 150);
-     add(lblCiarConta);
-     btnCriarConta = new JButton("Criar conta");
-     btnCriarConta.setSize(100,30);
-     btnCriarConta.setLocation(150,150);
-     btnCriarConta.addActionListener(this); 
-     add(btnCriarConta);
+        txtNome = new JTextField();
+        txtNome.setSize(150, 30);
+        txtNome.setLocation(120, 130);
+        add(txtNome);
+
+        lblSenha = new JLabel("Senha");
+        lblSenha.setSize(150, 30);
+        lblSenha.setLocation(40, 170);
+        add(lblSenha);
+        txtSenha = new JTextField();
+        txtSenha.setSize(150, 30);
+        txtSenha.setLocation(120, 170);
+        add(txtSenha);
+
+        btnLogin = new JButton("Login");
+        btnLogin.setSize(100, 30);
+        btnLogin.setLocation(140, 250);
+        btnLogin.addActionListener(this);
+        add(btnLogin);
+
+        // Cadastro
+        lblCriarConta = new JLabel("É novo por aqui:");
+        lblCriarConta.setSize(100, 30);
+        lblCriarConta.setLocation(20, 300);
+        add(lblCriarConta);
+
+        btnCriarConta = new JButton("Cadastrar");
+        btnCriarConta.setSize(100, 30);
+        btnCriarConta.setLocation(140, 300);
+        btnCriarConta.addActionListener(this);
+        add(btnCriarConta);
+
     }
 
-    public static void main(String[] args) {    
-        new Intro().setVisible(true); 
+    public static void main(String[] args) {
+        //cria a variavel para a imagem
+
+        new Intro().setVisible(true);
+
+        //conexão com o banco de dados
+        Connection conexao;
+        Statement st;
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) { // ação do botão
-        if(e.getSource()==btnCriarConta){
-            new LogFit().setVisible(true); // chama o formulario de criar conta
+        if (e.getSource() == btnCriarConta) {
+            new cadastro().setVisible(true); // chama o formulario de criar conta
             dispose(); // fecha ao clicar no botão
         }
 
