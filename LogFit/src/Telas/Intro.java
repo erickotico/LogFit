@@ -86,6 +86,10 @@ public class Intro extends JFrame implements ActionListener {
             new Cadastro().setVisible(true); // chama o formulario de criar conta
             dispose(); // fecha ao clicar no botão
         }
+        if(e.getSource() == btnLogin ){
+            new LogFit().setVisible(true);
+            dispose();
+        }
 
     }
 

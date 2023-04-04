@@ -40,7 +40,7 @@ public class Cadastro  extends JFrame{
 
      public Cadastro(){
          // Tamanho do formulario principal
-        setSize(1000, 400); 
+        setSize(500, 600); 
         setLocationRelativeTo(null); // Centraliza o formulario
         setTitle("Cadastro de funcionários");
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
@@ -79,7 +79,7 @@ public class Cadastro  extends JFrame{
                 
         // Isso é a caixa de sexo 
         genero.setSize(100,30);
-        genero.setLocation(500,50);
+        genero.setLocation(350,50);
         add(genero);
         //String selectedSexo = (String) genero.getSelectedItem();
     }
