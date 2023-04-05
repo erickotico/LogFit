@@ -17,17 +17,8 @@ public class Cadastro  extends JFrame{
      JComboBox<String> genero = new JComboBox<>(sexo);
 
     //variaveis de inteiros alterar depois
-     JLabel lblIdade;
-     JTextField txtIdade;
-
-     JLabel lblAnoMatricula;
-     JTextField txtAnoMatricula;     
-
-     JLabel lblMatricula;
-     JTextField txtMatricula;
-
-     JLabel lblCodigo;
-     JTextField txtCodigo; 
+     JLabel lblIdade, lblAnoMatricula, lblMatricula, lblCodigo;
+     JTextField txtIdade, txtAnoMatricula, txtMatricula, txtCodigo;
 
      // Variaveis reais alterar depois
      JLabel lblPesoAtual;

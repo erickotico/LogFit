@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.JPasswordField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.sql.Connection;
@@ -44,7 +45,7 @@ public class Intro extends JFrame implements ActionListener {
         lblSenha.setSize(150, 30);
         lblSenha.setLocation(40, 170);
         add(lblSenha);
-        txtSenha = new JTextField();
+        txtSenha = new JPasswordField();
         txtSenha.setSize(150, 30);
         txtSenha.setLocation(120, 170);
         add(txtSenha);
