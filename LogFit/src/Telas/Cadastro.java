@@ -7,6 +7,21 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+//comunicação com o Banco 
+import java.sql.Statement;
+//Para guardar a conexão com o Banco de dados
+import java.sql.Connection;
+//Paraindicar o banco de dados ao qual vamos nos conectar
+import java.sql.DriverManager;
+//Para tratar qualquer exceção de comando SQL digitado errado
+import java.sql.SQLException;
+//Para executar os comandos SQL INSERT, UPDATE, DELETE, SELECT
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
+
 
 public class Cadastro  extends JFrame implements ActionListener{
     

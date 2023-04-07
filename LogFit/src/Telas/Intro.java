@@ -1,6 +1,7 @@
 package Telas;
 
 // Aqui vai ser a tela de inicio tlg pedindo pra fazer login ou criar senha
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -9,6 +10,20 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+//comunicação com o Banco 
+import java.sql.Statement;
+//Para guardar a conexão com o Banco de dados
+import java.sql.Connection;
+//Paraindicar o banco de dados ao qual vamos nos conectar
+import java.sql.DriverManager;
+//Para tratar qualquer exceção de comando SQL digitado errado
+import java.sql.SQLException;
+//Para executar os comandos SQL INSERT, UPDATE, DELETE, SELECT
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
 
 public class Intro extends JFrame implements ActionListener {
 
@@ -77,9 +92,18 @@ public class Intro extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        //cria a variavel para a imagem
-        
         new Intro().setVisible(true);
+        try {
+            //cria a variavel para a imagem
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_empresa","root","admin");
+            Statement confirm = connect.createStatement();
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+           
+        } catch (ClassNotFoundException ex) {
+           JOptionPane.showMessageDialog(null, "O Driver não foi encontrado!");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Erro na conexão com o banco de dados!");
+        }
     }
 
     @Override
