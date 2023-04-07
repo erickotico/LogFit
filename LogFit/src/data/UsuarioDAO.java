@@ -12,16 +12,25 @@ public class UsuarioDAO {
   
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/aquiVemoNomeDoBancoNãodaTabela","root",""); // URL - usuario - senha <- Do banco logico
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/aquiVemoNomeDoBancoNãodaTabela","root",""); // URL - usuario - senha <- Do banco lógico
             return true;
         } catch (ClassNotFoundException | SQLException ex) {
             return false;
         }
     }
+    public void salvar(Usuario usuario){ // mudar de pra int no futuro e colocar os comando sql
     
+    }
     
+    public void desconectar(){ // pode ser void pq não vai retronar nada
+        try {
+        conn.close();
+        } catch (SQLException ex) {
+            // pode colocar menssagem de erro aqui pro usuario ou não tbm tanto faz
+        }
+    }
 }
 
 // Tem que colocar em Libraries o conector
 
-// Ai depois fazer uma função int salvar() pra incluir na tabela, uma void desconectar() e uma pro login pra conferir se ta no banco ou não
+// Função int salvar() pra incluir na tabela, uma pro login pra conferir se ta no banco ou não ai puxa os dados do usuario

@@ -3,6 +3,7 @@ package Telas;
 // Aqui vai ser a tela de inicio tlg pedindo pra fazer login ou criar senha
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -13,10 +14,11 @@ public class Intro extends JFrame implements ActionListener {
 
     
     // Botar isso aq depois
-    JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta;
+    JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta, lblImagem;
     JButton btnLogin, btnCriarConta;
     JTextField txtNome, txtSenha;
-
+    ImageIcon img;
+            
     public Intro() {
         setSize(500, 600);
         setLocationRelativeTo(null); // Centraliza o formulario
@@ -65,12 +67,18 @@ public class Intro extends JFrame implements ActionListener {
         btnCriarConta.setLocation(140, 300);
         btnCriarConta.addActionListener(this);
         add(btnCriarConta);
+        
+        // NUNCA MEXA -- imagem de background --  NÃO MEXE NISSO
+        img  = new ImageIcon(getClass().getResource("/img/background.jpeg")); // só altera o que está entre aspas por favor
+        lblImagem = new JLabel("", img, JLabel.CENTER);
+        lblImagem.setBounds(0, 0, 500, 600); // só altera essa linha aqui pelo amor de deus
+        add(lblImagem);
 
     }
 
     public static void main(String[] args) {
         //cria a variavel para a imagem
-
+        
         new Intro().setVisible(true);
     }
 
@@ -84,7 +92,5 @@ public class Intro extends JFrame implements ActionListener {
             new LogFit().setVisible(true);
             dispose();
         }
-
     }
-
 }

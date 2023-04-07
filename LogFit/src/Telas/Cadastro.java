@@ -1,12 +1,14 @@
 package Telas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
-public class Cadastro  extends JFrame{
+public class Cadastro  extends JFrame implements ActionListener{
     
 //variaveis de String 
      JLabel lblNome;
@@ -28,6 +30,8 @@ public class Cadastro  extends JFrame{
 
      JLabel lblAltura;
      JTextField txtAltura;
+     
+     JButton btnVotlar;
 
      public Cadastro(){
          // Tamanho do formulario principal
@@ -73,9 +77,23 @@ public class Cadastro  extends JFrame{
         genero.setLocation(350,50);
         add(genero);
         //String selectedSexo = (String) genero.getSelectedItem();
+        
+        // Botão voltar 
+        btnVotlar = new JButton("Voltar");
+        btnVotlar.setSize(100, 30);
+        btnVotlar.setLocation(140, 300);
+        btnVotlar.addActionListener(this);
+        add(btnVotlar);
     }
     public static void main(String[] args) {
         new Cadastro().setVisible(true);
     }
     
+        @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnVotlar) {
+            new Intro().setVisible(true);
+            dispose();
+        }
+    }
 }
