@@ -116,7 +116,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         // Botão de cadastro
         btnCadastrar = new JButton("Cadastrar");
         btnCadastrar.setSize(100, 30);
-        btnCadastrar.setLocation(150, 400);
+        btnCadastrar.setLocation(150, 350);
         btnCadastrar.addActionListener(this);
         add(btnCadastrar);
     }
