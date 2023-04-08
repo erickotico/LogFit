@@ -87,17 +87,17 @@ public class Cadastro  extends JFrame implements ActionListener{
         add(lblCpf);
         txtCpf = new JTextField();
         txtCpf.setSize(200,30);
-        txtCpf.setLocation(100, 350);
+        txtCpf.setLocation(100, 300);
         add(txtCpf);
         
         // Altura
         lblAltura = new JLabel("Altura");
         lblAltura.setSize(200, 30);
-        lblAltura.setLocation(150, 300);
+        lblAltura.setLocation(30, 400);
         add(lblAltura);
         txtAltura = new JTextField();
         txtAltura.setSize(100,30);
-        txtAltura.setLocation(100, 400);
+        txtAltura.setLocation(150, 400);
         add(txtAltura);
                 
         // Isso é a caixa de sexo 
@@ -109,7 +109,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         // Botão voltar 
         btnVotlar = new JButton("Voltar");
         btnVotlar.setSize(100, 30);
-        btnVotlar.setLocation(140, 300);
+        btnVotlar.setLocation(300, 300);
         btnVotlar.addActionListener(this);
         add(btnVotlar);
         
