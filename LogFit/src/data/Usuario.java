@@ -10,6 +10,7 @@ public class Usuario {
     private double pesoIdeal;
     private double altura;
     private String senha;
+    private String telefone;
     
     public Usuario() {
     }
@@ -86,4 +87,14 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+    
+    
 }
