@@ -100,7 +100,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         txtAltura.setLocation(150, 400);
         add(txtAltura);
                 
-        // Isso é a caixa de sexo 
+        // Isso é a caixa de sexo
         genero.setSize(100,30);
         genero.setLocation(350,50);
         add(genero);
@@ -143,11 +143,11 @@ public class Cadastro  extends JFrame implements ActionListener{
             boolean status;
             int resp;
 
-            // Quando o btn for apertado vai pegar essas paradas
+            // Quando o btn for apertado vai pegar esses itens
             usuario.setPeso(Double.parseDouble(txtPeso.getText()));
             usuario.setNome(txtNome.getText());
-            usuario.setTelefone(txtTelefone.getText());
-            usuario.setCpf(txtCpf.getText());
+            usuario.setEndereco(txtTelefone.getText());
+            usuario.setCep(txtCpf.getText());
             usuario.setAltura(Double.parseDouble(txtAltura.getText()));
             
 
