@@ -170,7 +170,7 @@ public class Cadastro  extends JFrame implements ActionListener{
             boolean status;
             int resp;
 
-            // Quando o btn for apertado vai pegar esses itens
+            // Quando o btn for apertado vai pegar esses itens -- colocar
             usuario.setPeso(Double.parseDouble(txtPeso.getText()));
             usuario.setNome(txtNome.getText());
             usuario.setEndereco(txtTelefone.getText());

@@ -2,12 +2,16 @@ package data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UsuarioDAO {
     Connection conn;
     PreparedStatement st;
+    ResultSet rs; // Pra função consultar que vamos usar como login
+
     
+    //Função faz todos os tramits de conexão
     public boolean conectar(){ // ai é só chamar o conectar() no botão de login e no de cadastro
   
         try {
@@ -18,6 +22,8 @@ public class UsuarioDAO {
             return false;
         }
     }
+    
+    // Função faz o insert
     public int salvar(Usuario usuario){
         int status;
         try {
@@ -40,12 +46,41 @@ public class UsuarioDAO {
         }
     }
     
+    // Função desconecta do banco
     public void desconectar(){
         try {
         conn.close();
         } catch (SQLException ex) {
-           
+            
         }
     }
+    
+    public Usuario consultar(String senha){ // <-- passar o parametro senha é obrigatorio
+        try {
+        Usuario usuario = new Usuario();  // Pode declarar aqui ou lá em cima mas só vou usar aqui mesmo
+        
+        st = conn.prepareStatement("SELECT * FROM usuario where senha = ?"); // Vai conectar e fazer o comando select
+        st.setString(1, senha); // vai puxar a a senha
+        rs = st.executeQuery(); // a variavel rs  é pra guardar o que foi gerrado
+        // Verifica se a consulta encontrou o funcionario com a matricula informada
+        if(rs.next()){//Se encontrou o funcionario
+                // COLOCAR OS OUTROS ITENS DO usuario aqui
+                usuario.setSenha(rs.getString("senha")); // Vai colocar a matricula e jogar no objeto funcionario
+                usuario.setNome(rs.getString("nome")); // Vai colocar a nome e jogar no objeto Usuario
+                usuario.setEndereco(rs.getString("endereço"));
+                usuario.setPeso(rs.getDouble("Peso"));
+                return usuario; // tem que retornar um objeto da classe funcionario pra poderr checar
+            } else{
+                return null;
+            }
+        } catch (SQLException ex) {
+            return null;
+        }   
+    
+    
+    }
+    
+    
+    
 }
 

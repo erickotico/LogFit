@@ -2,6 +2,8 @@ package Telas;
 
 // Aqui vai ser a tela de inicio tlg pedindo pra fazer login ou criar senha
 
+import data.Usuario;
+import data.UsuarioDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -10,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Intro extends JFrame implements ActionListener {
 
@@ -82,14 +85,35 @@ public class Intro extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) { // ação do botão
+    public void actionPerformed(ActionEvent e) { 
+        
+        // ação do botão Criar conta
         if (e.getSource() == btnCriarConta) {
             new Cadastro().setVisible(true); // chama o formulario de criar conta
             dispose(); // fecha ao clicar no botão
         }
+        
+        //Ação botão logar
         if(e.getSource() == btnLogin ){
-            new LogFit().setVisible(true);
-            dispose();
+            
+        String senha;// fazendo uma variavel pra receber a senha
+        senha = txtSenha.getText();// pegando a senha
+        UsuarioDAO dao = new UsuarioDAO();// Pra chamar as funçoes precisa fazer isso
+        boolean status = dao.conectar(); // chamando o metodo/função conectar
+        
+        if(status ==true){
+            Usuario usuario = dao.consultar(senha);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar
+            if(usuario == null){ // se o obj usuario for nulo senha incorreta
+                JOptionPane.showMessageDialog(null, "Senha incorreta");
+            }else{// se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit
+                new LogFit().setVisible(true);
+                dispose();
+            }
+            dao.desconectar();
+        }else{ // esse é o else do primeiro IF
+            JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados");
+        }
+
         }
     }
 }
