@@ -30,6 +30,7 @@ public class UsuarioDAO {
             st.setDouble(5, usuario.getPeso());
             st.setDouble(6, usuario.getPesoIdeal());
             st.setString(7, usuario.getTelefone());
+            // Não sei se precisa colocar pro id
         
             status = st.executeUpdate();// executando o que foi colocado na linha de cima
             return status; // aqui vai retornar 1 pq qunado vc executa o comando insert ele insere no banco e volta o valor 1 ou seja deu certo

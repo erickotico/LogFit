@@ -2,7 +2,7 @@ package data;
 
 public class Usuario {
     private int idusuario;
-     private String nome;
+    private String nome;
     private String endereco;
     private String cep;
     private String Estado;

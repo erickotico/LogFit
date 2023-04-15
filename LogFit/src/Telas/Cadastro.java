@@ -4,32 +4,40 @@ import data.Usuario;
 import data.UsuarioDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 
 public class Cadastro  extends JFrame implements ActionListener{
     
 //variaveis de String 
-     JLabel lblNome;
-     JTextField txtNome;
-
-     // NÃO MEXE NISSO É O BOX DE FEMININO E MASCULINO
+     JLabel lblNome, lblEndereco, lblCep, lblEstado, lblSenha, lblTelefone;
+     JTextField txtNome, txtEndereco, txtCep, txtEstado, txtTelefone;
+     JPasswordField txtSenha;
+             
+     // Vai ter sexo? ih
      String[] sexo = new String[] {"F", "M"};
      JComboBox<String> genero = new JComboBox<>(sexo);
 
     //variaveis de inteiros alterar depois
-     JLabel lblIdade, lblAnoMatricula, lblMatricula, lblCodigo, lblCpf, lblTelefone, lblAltura;
-     JTextField txtIdade, txtAnoMatricula, txtMatricula, txtCodigo, txtCpf, txtTelefone, txtAltura;
+     JLabel lblAltura;
+     JTextField txtAltura;
 
      JLabel lblPeso;
      JTextField txtPeso;
      
+     //Botoes
      JButton btnVotlar, btnCadastrar;
+     
+     // Imagens
+     JLabel lblImagen;
+     ImageIcon img;
 
      public Cadastro(){
          // Tamanho do formulario principal
@@ -50,25 +58,25 @@ public class Cadastro  extends JFrame implements ActionListener{
         txtNome.setLocation(100, 50);
         add(txtNome);
 
-        // IDADE
-        lblIdade = new JLabel("Idade");
-        lblIdade.setSize(100, 30);
-        lblIdade.setLocation(100, 100);
-        add(lblIdade);
-        txtIdade = new JTextField();
-        txtIdade.setSize(200,30);
-        txtIdade.setLocation(100, 100);
-        add(txtIdade);
+        // Senha
+        lblSenha = new JLabel("Senha");
+        lblSenha.setSize(100, 30);
+        lblSenha.setLocation(100, 100);
+        add(lblSenha);
+        txtSenha = new JPasswordField();
+        txtSenha.setSize(200,30);
+        txtSenha.setLocation(100, 100);
+        add(txtSenha);
 
-        // Peso
-        lblPeso = new JLabel("Peso");
-        lblPeso.setSize(100, 30);
-        lblPeso.setLocation(30, 200);
-        add(lblPeso);
-        txtPeso = new JTextField();
-        txtPeso.setSize(200,30);
-        txtPeso.setLocation(100, 200);
-        add(txtPeso);
+        // Endereço
+        lblEndereco = new JLabel("Endereço");
+        lblEndereco.setSize(100, 30);
+        lblEndereco.setLocation(30, 200);
+        add(lblEndereco);
+        txtEndereco = new JTextField();
+        txtEndereco.setSize(200,30);
+        txtEndereco.setLocation(100, 200);
+        add(txtEndereco);
         
         // Telefone
         lblTelefone = new JLabel("Telefone");
@@ -80,15 +88,24 @@ public class Cadastro  extends JFrame implements ActionListener{
         txtTelefone.setLocation(100, 250);
         add(txtTelefone);
                 
-        // CPF
-        lblCpf = new JLabel("CPF");
-        lblCpf.setSize(100, 30);
-        lblCpf.setLocation(30, 300);
-        add(lblCpf);
-        txtCpf = new JTextField();
-        txtCpf.setSize(200,30);
-        txtCpf.setLocation(100, 300);
-        add(txtCpf);
+        // CEP
+        lblCep = new JLabel("Cep");
+        lblCep.setSize(100, 30);
+        lblCep.setLocation(30, 300);
+        add(lblCep);
+        txtCep = new JTextField();
+        txtCep.setSize(200,30);
+        txtCep.setLocation(100, 300);
+        add(txtCep);
+        
+        lblEstado = new JLabel("Estado");
+        lblEstado.setSize(100, 30);
+        lblEstado.setLocation(30, 300);
+        add(lblEstado);
+        txtEstado = new JTextField();
+        txtEstado.setSize(200,30);
+        txtEstado.setLocation(100, 300);
+        add(txtEstado);
         
         // Altura
         lblAltura = new JLabel("Altura");
@@ -119,6 +136,15 @@ public class Cadastro  extends JFrame implements ActionListener{
         btnCadastrar.setLocation(150, 350);
         btnCadastrar.addActionListener(this);
         add(btnCadastrar);
+        
+        //imagem de background
+        img  = new ImageIcon(getClass().getResource("/img/background.jpeg")); // só altera o que está entre aspas por favor
+        lblImagen = new JLabel("", img, JLabel.CENTER);
+        lblImagen.setBounds(0, 0, 500, 600); // só altera essa linha aqui pelo amor de deus
+        add(lblImagen);
+        
+        
+        
     }
     public static void main(String[] args) {
         new Cadastro().setVisible(true);
@@ -126,6 +152,7 @@ public class Cadastro  extends JFrame implements ActionListener{
     
         @Override
     public void actionPerformed(ActionEvent e) {
+        
         // Botão voltar
         if (e.getSource() == btnVotlar) {
             new Intro().setVisible(true);
@@ -147,7 +174,7 @@ public class Cadastro  extends JFrame implements ActionListener{
             usuario.setPeso(Double.parseDouble(txtPeso.getText()));
             usuario.setNome(txtNome.getText());
             usuario.setEndereco(txtTelefone.getText());
-            usuario.setCep(txtCpf.getText());
+            usuario.setCep(txtCep.getText());
             usuario.setAltura(Double.parseDouble(txtAltura.getText()));
             
 
