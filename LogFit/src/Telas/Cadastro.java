@@ -2,6 +2,7 @@ package Telas;
 
 import data.Usuario;
 import data.UsuarioDAO;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -43,7 +44,7 @@ public class Cadastro  extends JFrame implements ActionListener{
          // Tamanho do formulario principal
         setSize(500, 600); 
         setLocationRelativeTo(null); // Centraliza o formulario
-        setTitle("Cadastro de funcionários");
+        setTitle("Cadastro de Usuario");
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
         setLayout(null);
 
@@ -52,6 +53,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         lblNome = new JLabel("Nome");
         lblNome.setSize(100,30);
         lblNome.setLocation(30, 50);
+        lblNome.setForeground(new Color(0,128,0));
         add(lblNome); 
         txtNome = new JTextField();
         txtNome.setSize(200,30);
@@ -61,7 +63,8 @@ public class Cadastro  extends JFrame implements ActionListener{
         // Senha
         lblSenha = new JLabel("Senha");
         lblSenha.setSize(100, 30);
-        lblSenha.setLocation(100, 100);
+        lblSenha.setLocation(30, 100);
+        lblSenha.setForeground(new Color(0,128,0));
         add(lblSenha);
         txtSenha = new JPasswordField();
         txtSenha.setSize(200,30);
@@ -72,6 +75,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         lblEndereco = new JLabel("Endereço");
         lblEndereco.setSize(100, 30);
         lblEndereco.setLocation(30, 200);
+        lblEndereco.setForeground(new Color(0,128,0));
         add(lblEndereco);
         txtEndereco = new JTextField();
         txtEndereco.setSize(200,30);
@@ -82,6 +86,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         lblTelefone = new JLabel("Telefone");
         lblTelefone.setSize(100, 30);
         lblTelefone.setLocation(30, 250);
+        lblTelefone.setForeground(new Color(0,128,0));
         add(lblTelefone);
         txtTelefone = new JTextField();
         txtTelefone.setSize(200,30);
@@ -92,6 +97,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         lblCep = new JLabel("Cep");
         lblCep.setSize(100, 30);
         lblCep.setLocation(30, 300);
+        lblCep.setForeground(new Color(0,128,0));
         add(lblCep);
         txtCep = new JTextField();
         txtCep.setSize(200,30);
@@ -101,6 +107,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         lblEstado = new JLabel("Estado");
         lblEstado.setSize(100, 30);
         lblEstado.setLocation(30, 300);
+        lblEstado.setForeground(new Color(0,128,0));
         add(lblEstado);
         txtEstado = new JTextField();
         txtEstado.setSize(200,30);
@@ -111,6 +118,7 @@ public class Cadastro  extends JFrame implements ActionListener{
         lblAltura = new JLabel("Altura");
         lblAltura.setSize(200, 30);
         lblAltura.setLocation(30, 400);
+        lblAltura.setForeground(new Color(0,128,0));
         add(lblAltura);
         txtAltura = new JTextField();
         txtAltura.setSize(100,30);

@@ -4,7 +4,7 @@ package Telas;
 
 import data.Usuario;
 import data.UsuarioDAO;
-
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -25,63 +25,71 @@ public class Intro extends JFrame implements ActionListener {
     ImageIcon img,imgLogo;
             
     public Intro() {
-        setSize(500, 600);
+        setSize(500, 500);
         setLocationRelativeTo(null); // Centraliza o formulario
         setTitle("Login");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
         // Login
-        lblLogin = new JLabel("Já posui uma conta: ");
+        lblLogin = new JLabel("Login: ");
         lblLogin.setSize(150, 30);
-        lblLogin.setLocation(140, 100);
+        lblLogin.setLocation(220, 200);
         add(lblLogin);
+        lblLogin.setForeground(new Color(0,128,0));
 
         lblUsuario = new JLabel("Usuario:");
         lblUsuario.setSize(150, 30);
-        lblUsuario.setLocation(40, 130);
+        lblUsuario.setLocation(130, 230);
         add(lblUsuario);
+        lblUsuario.setForeground(new Color(0,128,0));
 
         txtNome = new JTextField();
         txtNome.setSize(150, 30);
-        txtNome.setLocation(120, 130);
+        txtNome.setLocation(200, 230);
         add(txtNome);
 
         lblSenha = new JLabel("Senha");
         lblSenha.setSize(150, 30);
-        lblSenha.setLocation(40, 170);
+        lblSenha.setLocation(140, 270);
         add(lblSenha);
+        lblSenha.setForeground(new Color(0,128,0));
         txtSenha = new JPasswordField();
         txtSenha.setSize(150, 30);
-        txtSenha.setLocation(120, 170);
+        txtSenha.setLocation(200, 270);
         add(txtSenha);
 
         btnLogin = new JButton("Login");
         btnLogin.setSize(100, 30);
-        btnLogin.setLocation(140, 250);
+        btnLogin.setLocation(220, 360);
         btnLogin.addActionListener(this);
         add(btnLogin);
+        btnLogin.setBackground(new Color(0,200,50));
+        btnLogin.setForeground(new Color(0,128,0));
 
         // Cadastro
         lblCriarConta = new JLabel("É novo por aqui:");
         lblCriarConta.setSize(100, 30);
-        lblCriarConta.setLocation(20, 300);
+        lblCriarConta.setLocation(100, 400);
         add(lblCriarConta);
+        lblCriarConta.setForeground(new Color(0,100,0));
 
         btnCriarConta = new JButton("Cadastrar");
         btnCriarConta.setSize(100, 30);
-        btnCriarConta.setLocation(140, 300);
+        btnCriarConta.setLocation(220, 400);
         btnCriarConta.addActionListener(this);
         add(btnCriarConta);
+        btnCriarConta.setBackground(new Color(0,200,50));
+        btnCriarConta.setForeground(new Color(0,100,0));
         
         // NUNCA MEXA -- imagem de background --  NÃO MEXE NISSO
          imgLogo = new ImageIcon(getClass().getResource("/img/LogoLogFit.png"));
         lblLogo = new JLabel("",imgLogo,JLabel.CENTER);
-        lblLogo.setBounds(-50,-10 , 500,500);
+        lblLogo.setBounds(120,-20 , 250,250);
         add(lblLogo);
         
         img = new ImageIcon(getClass().getResource("/img/background.jpeg")); // só altera o que está entre aspas por favor
         lblImagem = new JLabel("", img, JLabel.CENTER);
-        lblImagem.setBounds(0, -100, 500, 600); // só altera essa linha aqui pelo amor de deus
+        lblImagem.setBounds(0, -75, 500, 600); // só altera essa linha aqui pelo amor de deus
         add(lblImagem);
         
        
@@ -123,5 +131,5 @@ public class Intro extends JFrame implements ActionListener {
         }
 
         }
-    }
+    }   
 }
