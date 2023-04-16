@@ -4,6 +4,7 @@ package Telas;
 
 import data.Usuario;
 import data.UsuarioDAO;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
@@ -18,10 +19,10 @@ public class Intro extends JFrame implements ActionListener {
 
     
     // Botar isso aq depois
-    JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta, lblImagem;
+    JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta, lblImagem,lblLogo;
     JButton btnLogin, btnCriarConta;
     JTextField txtNome, txtSenha;
-    ImageIcon img;
+    ImageIcon img,imgLogo;
             
     public Intro() {
         setSize(500, 600);
@@ -73,10 +74,17 @@ public class Intro extends JFrame implements ActionListener {
         add(btnCriarConta);
         
         // NUNCA MEXA -- imagem de background --  NÃO MEXE NISSO
-        img  = new ImageIcon(getClass().getResource("/img/background.jpeg")); // só altera o que está entre aspas por favor
+         imgLogo = new ImageIcon(getClass().getResource("/img/LogoLogFit.png"));
+        lblLogo = new JLabel("",imgLogo,JLabel.CENTER);
+        lblLogo.setBounds(-50,-10 , 500,500);
+        add(lblLogo);
+        
+        img = new ImageIcon(getClass().getResource("/img/background.jpeg")); // só altera o que está entre aspas por favor
         lblImagem = new JLabel("", img, JLabel.CENTER);
-        lblImagem.setBounds(0, 0, 500, 600); // só altera essa linha aqui pelo amor de deus
+        lblImagem.setBounds(0, -100, 500, 600); // só altera essa linha aqui pelo amor de deus
         add(lblImagem);
+        
+       
 
     }
 
