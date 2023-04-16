@@ -17,7 +17,6 @@ import javax.swing.JOptionPane;
 
 public class Intro extends JFrame implements ActionListener {
 
-    
     // Botar isso aq depois
     JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta, lblImagem,lblLogo;
     JButton btnLogin, btnCriarConta;
