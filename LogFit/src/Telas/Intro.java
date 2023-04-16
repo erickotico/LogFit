@@ -120,7 +120,7 @@ public class Intro extends JFrame implements ActionListener {
         if(status ==true){
             Usuario usuario = dao.consultar(senha);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar
             if(usuario == null){ // se o obj usuario for nulo senha incorreta
-                JOptionPane.showMessageDialog(null, "Senha incorreta");
+                JOptionPane.showMessageDialog(null, "Usuario ou Senha incorreta");
             }else{// se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit
                 new LogFit().setVisible(true);
                 dispose();

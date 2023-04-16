@@ -17,7 +17,7 @@ public class UsuarioDAO {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_empresa", "root", "admin"); // URL - usuario - senha <- Do banco lógico
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_logfit", "root", "admin"); // URL - usuario - senha <- Do banco lógico
             return true;
         } catch (ClassNotFoundException | SQLException ex) {
             return false;

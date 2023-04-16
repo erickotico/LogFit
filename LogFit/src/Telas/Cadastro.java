@@ -42,7 +42,7 @@ public class Cadastro  extends JFrame implements ActionListener{
 
      public Cadastro(){
          // Tamanho do formulario principal
-        setSize(500, 600); 
+        setSize(600, 500); 
         setLocationRelativeTo(null); // Centraliza o formulario
         setTitle("Cadastro de Usuario");
         setDefaultCloseOperation(EXIT_ON_CLOSE); 
@@ -51,82 +51,82 @@ public class Cadastro  extends JFrame implements ActionListener{
         
         // NOME
         lblNome = new JLabel("Nome");
-        lblNome.setSize(100,30);
-        lblNome.setLocation(30, 50);
+        lblNome.setSize(90,20);
+        lblNome.setLocation(30, 100);
         lblNome.setForeground(new Color(0,128,0));
         add(lblNome); 
         txtNome = new JTextField();
-        txtNome.setSize(200,30);
-        txtNome.setLocation(100, 50);
+        txtNome.setSize(150,20);
+        txtNome.setLocation(90, 100);
         add(txtNome);
 
         // Senha
         lblSenha = new JLabel("Senha");
-        lblSenha.setSize(100, 30);
-        lblSenha.setLocation(30, 100);
+        lblSenha.setSize(90,20);
+        lblSenha.setLocation(30, 130);
         lblSenha.setForeground(new Color(0,128,0));
         add(lblSenha);
         txtSenha = new JPasswordField();
-        txtSenha.setSize(200,30);
-        txtSenha.setLocation(100, 100);
+        txtSenha.setSize(150,20);
+        txtSenha.setLocation(90, 130);
         add(txtSenha);
 
         // Endereço
         lblEndereco = new JLabel("Endereço");
-        lblEndereco.setSize(100, 30);
-        lblEndereco.setLocation(30, 200);
+        lblEndereco.setSize(90,20);
+        lblEndereco.setLocation(30, 160);
         lblEndereco.setForeground(new Color(0,128,0));
         add(lblEndereco);
         txtEndereco = new JTextField();
-        txtEndereco.setSize(200,30);
-        txtEndereco.setLocation(100, 200);
+        txtEndereco.setSize(150,20);
+        txtEndereco.setLocation(90, 160);
         add(txtEndereco);
         
         // Telefone
         lblTelefone = new JLabel("Telefone");
-        lblTelefone.setSize(100, 30);
-        lblTelefone.setLocation(30, 250);
+        lblTelefone.setSize(90,20);
+        lblTelefone.setLocation(30, 190);
         lblTelefone.setForeground(new Color(0,128,0));
         add(lblTelefone);
         txtTelefone = new JTextField();
-        txtTelefone.setSize(200,30);
-        txtTelefone.setLocation(100, 250);
+        txtTelefone.setSize(150,20);
+        txtTelefone.setLocation(90, 190);
         add(txtTelefone);
                 
         // CEP
         lblCep = new JLabel("Cep");
-        lblCep.setSize(100, 30);
-        lblCep.setLocation(30, 300);
+        lblCep.setSize(90,20);
+        lblCep.setLocation(30, 220);
         lblCep.setForeground(new Color(0,128,0));
         add(lblCep);
         txtCep = new JTextField();
-        txtCep.setSize(200,30);
-        txtCep.setLocation(100, 300);
+        txtCep.setSize(150,20);
+        txtCep.setLocation(90, 220);
         add(txtCep);
         
         lblEstado = new JLabel("Estado");
-        lblEstado.setSize(100, 30);
-        lblEstado.setLocation(30, 300);
+        lblEstado.setSize(90,20);
+        lblEstado.setLocation(30, 250);
         lblEstado.setForeground(new Color(0,128,0));
         add(lblEstado);
         txtEstado = new JTextField();
-        txtEstado.setSize(200,30);
-        txtEstado.setLocation(100, 300);
+        txtEstado.setSize(150,20);
+        txtEstado.setLocation(90, 250);
         add(txtEstado);
         
         // Altura
         lblAltura = new JLabel("Altura");
-        lblAltura.setSize(200, 30);
-        lblAltura.setLocation(30, 400);
+        lblAltura.setSize(90,20);
+        lblAltura.setLocation(30, 280);
         lblAltura.setForeground(new Color(0,128,0));
         add(lblAltura);
         txtAltura = new JTextField();
-        txtAltura.setSize(100,30);
-        txtAltura.setLocation(150, 400);
+        txtAltura.setSize(150,20);
+        txtAltura.setLocation(90, 280);
         add(txtAltura);
                 
         // Isso é a caixa de sexo
-        genero.setSize(100,30);
+        genero.setSize(50,20);
         genero.setLocation(350,50);
         add(genero);
         //String selectedSexo = (String) genero.getSelectedItem();
@@ -134,21 +134,21 @@ public class Cadastro  extends JFrame implements ActionListener{
         // Botão voltar 
         btnVotlar = new JButton("Voltar");
         btnVotlar.setSize(100, 30);
-        btnVotlar.setLocation(300, 300);
+        btnVotlar.setLocation(300, 400);
         btnVotlar.addActionListener(this);
         add(btnVotlar);
         
         // Botão de cadastro
         btnCadastrar = new JButton("Cadastrar");
         btnCadastrar.setSize(100, 30);
-        btnCadastrar.setLocation(150, 350);
+        btnCadastrar.setLocation(150, 400);
         btnCadastrar.addActionListener(this);
         add(btnCadastrar);
         
         //imagem de background
         img  = new ImageIcon(getClass().getResource("/img/background.jpeg")); // só altera o que está entre aspas por favor
         lblImagen = new JLabel("", img, JLabel.CENTER);
-        lblImagen.setBounds(0, 0, 500, 600); // só altera essa linha aqui pelo amor de deus
+    lblImagen.setBounds(0, -20, 600, 500); // só altera essa linha aqui pelo amor de deus
         add(lblImagen);
         
         
