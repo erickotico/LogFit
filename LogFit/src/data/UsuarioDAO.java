@@ -61,7 +61,7 @@ public class UsuarioDAO {
         }
     }
 
-    public Usuario consultar(String senha, String login) { // <-- passar o parametro login e senha é obrigatorio
+    public Usuario consultar(String senha, String login) { // <-- passar o parametro login e senha é obrigatorio -- o usuario depois de public é pq vai retornar um obj usuario
         try {
             Usuario usuario = new Usuario();  // Pode declarar aqui ou lá em cima mas só vou usar aqui mesmo
 
