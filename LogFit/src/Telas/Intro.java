@@ -20,7 +20,7 @@ public class Intro extends JFrame implements ActionListener {
     // Botar isso aq depois
     JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta, lblImagem,lblLogo;
     JButton btnLogin, btnCriarConta;
-    JTextField txtNome, txtSenha;
+    JTextField txtLogin, txtSenha;
     ImageIcon img,imgLogo;
             
     public Intro() {
@@ -42,10 +42,10 @@ public class Intro extends JFrame implements ActionListener {
         add(lblUsuario);
         lblUsuario.setForeground(new Color(0,128,0));
 
-        txtNome = new JTextField();
-        txtNome.setSize(150, 30);
-        txtNome.setLocation(200, 230);
-        add(txtNome);
+        txtLogin = new JTextField("");
+        txtLogin.setSize(150, 30);
+        txtLogin.setLocation(200, 230);
+        add(txtLogin);
 
         lblSenha = new JLabel("Senha");
         lblSenha.setSize(150, 30);
@@ -113,13 +113,15 @@ public class Intro extends JFrame implements ActionListener {
             
         String senha;// fazendo uma variavel pra receber a senha
         senha = txtSenha.getText();// pegando a senha
+        String login;
+        login = txtLogin.getText();
         UsuarioDAO dao = new UsuarioDAO();// Pra chamar as funçoes precisa fazer isso
         boolean status = dao.conectar(); // chamando o metodo/função conectar
         
         if(status ==true){
-            Usuario usuario = dao.consultar(senha);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar
+            Usuario usuario = dao.consultar(senha,login);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar
             if(usuario == null){ // se o obj usuario for nulo senha incorreta
-                JOptionPane.showMessageDialog(null, "Usuario ou Senha incorreta");
+                JOptionPane.showMessageDialog(null, "Login ou Senha incorreta");
             }else{// se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit
                 new LogFit().setVisible(true);
                 dispose();

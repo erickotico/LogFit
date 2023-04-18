@@ -17,11 +17,11 @@ import javax.swing.JPasswordField;
 public class Cadastro extends JFrame implements ActionListener {
 
 //variaveis de String 
-    JLabel lblNome, lblEndereco, lblCep, lblEstado, lblSenha, lblTelefone;
-    JTextField txtNome, txtEndereco, txtCep, txtEstado, txtTelefone;
+    JLabel lblNome, lblEndereco, lblCep, lblEstado, lblSenha, lblTelefone, lblLogin, lblCpf;
+    JTextField txtNome, txtEndereco, txtCep, txtEstado, txtTelefone, txtLogin, txtCpf;
     JPasswordField txtSenha;
 
-    // Vai ter sexo? ih
+    // Sexo?
     String[] sexo = new String[]{"F", "M"};
     JComboBox<String> genero = new JComboBox<>(sexo);
 
@@ -102,6 +102,7 @@ public class Cadastro extends JFrame implements ActionListener {
         txtCep.setLocation(90, 220);
         add(txtCep);
 
+        // Estado
         lblEstado = new JLabel("Estado");
         lblEstado.setSize(90, 20);
         lblEstado.setLocation(30, 250);
@@ -122,6 +123,39 @@ public class Cadastro extends JFrame implements ActionListener {
         txtAltura.setSize(150, 20);
         txtAltura.setLocation(90, 280);
         add(txtAltura);
+        
+        // Login -- coloca isso como primeiro ou na frente sei lá
+        lblLogin = new JLabel("Login");
+        lblLogin.setSize(90, 20);
+        lblLogin.setLocation(30, 320);
+        lblLogin.setForeground(new Color(0, 128, 0));
+        add(lblLogin);
+        txtLogin = new JTextField();
+        txtLogin.setSize(150, 20);
+        txtLogin.setLocation(90, 320);
+        add(txtLogin);
+        
+        // CPF -- coloca isso como primeiro ou na frente sei lá
+        lblCpf = new JLabel("Cpf");
+        lblCpf.setSize(90, 20);
+        lblCpf.setLocation(30, 360);
+        lblCpf.setForeground(new Color(0, 128, 0));
+        add(lblCpf);
+        txtCpf = new JTextField();
+        txtCpf.setSize(150, 20);
+        txtCpf.setLocation(90, 360);
+        add(txtCpf);
+        
+        // Peso -- Arrumar a posicão
+        lblPeso = new JLabel("Peso");
+        lblPeso.setSize(90, 20);
+        lblPeso.setLocation(30, 380);
+        lblPeso.setForeground(new Color(0, 128, 0));
+        add(lblPeso);
+        txtPeso = new JTextField();
+        txtPeso.setSize(150, 20);
+        txtPeso.setLocation(90, 380);
+        add(txtPeso);
 
         // Isso é a caixa de sexo
         genero.setSize(50, 20);
@@ -175,11 +209,16 @@ public class Cadastro extends JFrame implements ActionListener {
             boolean status;
             int resp;
 
-            // Quando o btn for apertado vai pegar esses itens -- colocar
+            // Quando o btn for apertado vai pegar esses itens -- colocar -- COLOCA EM ORDEM pls
             usuario.setPeso(Double.parseDouble(txtPeso.getText()));
             usuario.setNome(txtNome.getText());
-            usuario.setEndereco(txtTelefone.getText());
+            usuario.setEndereco(txtEndereco.getText());
             usuario.setCep(txtCep.getText());
+            usuario.setCpf(txtCpf.getText());
+            usuario.setEstado(txtEstado.getText());
+            usuario.setTelefone(txtTelefone.getText());
+            usuario.setLogin(txtLogin.getText());
+            usuario.setSenha(txtSenha.getText());
             usuario.setAltura(Double.parseDouble(txtAltura.getText()));
 
             status = dao.conectar(); // Aqui estamos fazendo a con com o banco
@@ -192,7 +231,7 @@ public class Cadastro extends JFrame implements ActionListener {
                 } else if (resp == 1062) {
                     JOptionPane.showMessageDialog(null, "Essa matricula ja foi cadastrada");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Erro ao tentar salvar o Usuario");
+                    JOptionPane.showMessageDialog(null, "Erro ao tentar Cadastrar o Usuario");
                 }
                 dao.desconectar();
             }
