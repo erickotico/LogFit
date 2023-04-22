@@ -71,11 +71,32 @@ public class UsuarioDAO {
             
             rs = st.executeQuery(); // a variavel rs  é pra guardar o que foi gerrado
             // Verifica se a consulta encontrou o funcionario com a matricula informada
-            if (rs.next()) {//Se encontrou o funcionario
+            if (rs.next()) {//Se encontrou o Usuario
                 // COLOCAR OS OUTROS ITENS DO usuario aqui
                 //usuario.setSenha(rs.getString("senha")); // Vai colocar a matricula e jogar no objeto funcionario
                 //usuario.setNome(rs.getString("nome")); // Vai colocar a nome e jogar no objeto Usuario
                 //usuario.setPeso(rs.getDouble("Peso"));
+                return usuario; // tem que retornar um objeto da classe funcionario pra poderr checar
+            } else {
+                return null;
+            }
+        } catch (SQLException ex) {
+            return null;
+        }
+    }
+    
+    public Usuario logfit() { // TEM QUE REFINAR PQ TA PUXANDO SÓ O PRIMEIRO
+        try {
+            Usuario usuario = new Usuario();
+
+            st = conn.prepareStatement("SELECT * FROM cadastro");// EU sei que tem a ver com isso MAS NÃO SEI RESOLVER
+            rs = st.executeQuery();
+            
+            if (rs.next()) {
+                
+                // COLOCAR OS OUTROS ITENS DO usuario aqui
+                usuario.setNome(rs.getString("nome")); // Vai colocar a nome e jogar no objeto Usuario
+                usuario.setAltura(rs.getDouble("altura"));
                 return usuario; // tem que retornar um objeto da classe funcionario pra poderr checar
             } else {
                 return null;

@@ -4,6 +4,10 @@
  */
 package Telas;
 
+import data.Usuario;
+import data.UsuarioDAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -14,7 +18,19 @@ public class LogFit extends javax.swing.JFrame {
      * Creates new form LogFit
      */
     public LogFit() {
+        
         initComponents();
+        
+        //ISSO AQUI TEM QUE REFINAR PQ TA PUXANDO SÓ O PRIMEIRO ITEM DO SQL MAS SALVE ESTE CODIGO  
+        UsuarioDAO dao = new UsuarioDAO();
+        boolean status = dao.conectar(); 
+        if(status ==true){
+            Usuario usuario = dao.logfit();
+            txtNome.setText(usuario.getNome());
+            txtAltura.setText(String.valueOf(usuario.getAltura()));
+        }else{
+            JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados");
+        }   
     }
 
     /**
@@ -28,6 +44,8 @@ public class LogFit extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        txtNome = new javax.swing.JTextField();
+        txtAltura = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LogFit");
@@ -47,6 +65,19 @@ public class LogFit extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(80, 310, 120, 50);
 
+        txtNome.setEditable(false);
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNome);
+        txtNome.setBounds(70, 200, 310, 60);
+
+        txtAltura.setEditable(false);
+        getContentPane().add(txtAltura);
+        txtAltura.setBounds(50, 410, 330, 90);
+
         setSize(new java.awt.Dimension(516, 608));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -55,6 +86,10 @@ public class LogFit extends javax.swing.JFrame {
         new Intro().setVisible(true); // ISSO AQUI É SÓ PRA N TER QUE FICAR FECHANDO TODA HORA E RE RODANDO O CODIGO PODE TIRAR QUANDO q
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,5 +129,7 @@ public class LogFit extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField txtAltura;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
