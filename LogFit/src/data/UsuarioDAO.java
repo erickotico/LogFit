@@ -73,10 +73,10 @@ public class UsuarioDAO {
             // Verifica se a consulta encontrou o funcionario com a matricula informada
             if (rs.next()) {//Se encontrou o Usuario
                 // COLOCAR OS OUTROS ITENS DO usuario aqui
-                //usuario.setSenha(rs.getString("senha")); // Vai colocar a matricula e jogar no objeto funcionario
+                
                 usuario.setNome(rs.getString("nome")); // Vai colocar a nome e jogar no objeto Usuario
-                usuario.setPeso(rs.getDouble("Peso"));
-                usuario.setPesoIdeal(rs.getDouble("Peso Ideal"));
+                //usuario.setPeso(rs.getDouble("Peso"));
+                //usuario.setPesoIdeal(rs.getDouble("Peso Ideal"));
                 
                 return usuario; // tem que retornar um objeto da classe funcionario pra poderr checar
             } else {

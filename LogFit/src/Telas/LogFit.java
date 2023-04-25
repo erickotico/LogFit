@@ -5,8 +5,6 @@
 package Telas;
 
 import data.Usuario;
-import data.UsuarioDAO;
-import javax.swing.JOptionPane;
 
 /**
  *
