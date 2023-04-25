@@ -73,9 +73,9 @@ public class UsuarioDAO {
             // Verifica se a consulta encontrou o funcionario com a matricula informada
             if (rs.next()) {//Se encontrou o Usuario
                 // COLOCAR OS OUTROS ITENS DO usuario aqui
-                
+                // SÓ COLOCA AQUI QUANADO TIVER AS TEXT BOX
                 usuario.setNome(rs.getString("nome")); // Vai colocar a nome e jogar no objeto Usuario
-                //usuario.setPeso(rs.getDouble("Peso"));
+                usuario.setAltura(rs.getDouble("altura"));
                 //usuario.setPesoIdeal(rs.getDouble("Peso Ideal"));
                 
                 return usuario; // tem que retornar um objeto da classe funcionario pra poderr checar

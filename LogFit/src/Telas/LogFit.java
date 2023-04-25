@@ -18,6 +18,8 @@ public class LogFit extends javax.swing.JFrame {
     public LogFit(Usuario usuario) {
         initComponents();   
         txtNome.setText(usuario.getNome());
+        txtAltura.setText(String.valueOf(usuario.getAltura())); // Precisa colocar as textBox pra funcionar 
+        // LER O UsuarioDAO função consultar() pls
 
     }
 
