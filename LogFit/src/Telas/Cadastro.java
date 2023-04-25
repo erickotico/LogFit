@@ -227,13 +227,15 @@ public class Cadastro extends JFrame implements ActionListener {
             } else { // o else é pq conectou ent chamo o metodo/função salvar
                 resp = dao.salvar(usuario);// AQUI É O COMANDO INSERT
                 if (resp == 1) { // se ela for 1 deu tudo certo -- NÃO mudar pra switch-case
-                    JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso");
+                    JOptionPane.showMessageDialog(null, "Bem Vindo");
+                    new LogFit(usuario).setVisible(true);
+                    dispose();
                 } else if (resp == 1062) {
                     JOptionPane.showMessageDialog(null, "Essa matricula ja foi cadastrada");
                 } else {
                     JOptionPane.showMessageDialog(null, "Erro ao tentar Cadastrar o Usuario");
                 }
-                dao.desconectar();
+
             }
         }
     }
