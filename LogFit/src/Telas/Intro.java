@@ -123,7 +123,7 @@ public class Intro extends JFrame implements ActionListener {
             if(usuario == null){ // se o obj usuario for nulo senha incorreta
                 JOptionPane.showMessageDialog(null, "Login ou Senha incorreta");
             }else{// se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit
-                new LogFit().setVisible(true);
+                new LogFit(usuario).setVisible(true);
                 dispose();
             }
             dao.desconectar();

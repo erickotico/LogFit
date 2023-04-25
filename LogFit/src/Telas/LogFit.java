@@ -17,20 +17,10 @@ public class LogFit extends javax.swing.JFrame {
     /**
      * Creates new form LogFit
      */
-    public LogFit() {
-        
-        initComponents();
-        
-        //ISSO AQUI TEM QUE REFINAR PQ TA PUXANDO SÓ O PRIMEIRO ITEM DO SQL MAS SALVE ESTE CODIGO  
-        UsuarioDAO dao = new UsuarioDAO();
-        boolean status = dao.conectar(); 
-        if(status ==true){
-            Usuario usuario = dao.logfit();
-            txtNome.setText(usuario.getNome());
-            txtAltura.setText(String.valueOf(usuario.getAltura()));
-        }else{
-            JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados");
-        }   
+    public LogFit(Usuario usuario) {
+        initComponents();   
+        txtNome.setText(usuario.getNome());
+
     }
 
     /**
@@ -88,7 +78,6 @@ public class LogFit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-
     }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
@@ -121,7 +110,8 @@ public class LogFit extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LogFit().setVisible(true);
+                Usuario usuario = null;
+                new LogFit(usuario).setVisible(true);
             }
         });
     }
