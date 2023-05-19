@@ -190,16 +190,16 @@ public class Cadastro extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
 
         // Botão voltar
-        if (e.getSource() == btnVotlar) {
+        if (evt.getSource() == btnVotlar) {
             new Intro().setVisible(true);
             dispose();
         }
 
         // Ação do botão de cadastro
-        if (e.getSource() == btnCadastrar) {
+        if (evt.getSource() == btnCadastrar) {
             // Instanciando o objeto da classe funcionario
             Usuario usuario;
             usuario = new Usuario();

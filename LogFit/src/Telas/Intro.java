@@ -1,115 +1,129 @@
 package Telas;
 
-// Aqui vai ser a tela de inicio tlg pedindo pra fazer login ou criar senha
-
 import data.Usuario;
 import data.UsuarioDAO;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class Intro extends JFrame implements ActionListener {
+public class Intro extends javax.swing.JFrame {
 
-    // Botar isso aq depois
-    JLabel lblLogin, lblUsuario, lblSenha, lblCriarConta, lblImagem,lblLogo;
-    JButton btnLogin, btnCriarConta;
-    JTextField txtLogin, txtSenha;
-    ImageIcon img,imgLogo;
-            
     public Intro() {
-        setSize(500, 500);
-        setLocationRelativeTo(null); // Centraliza o formulario
-        setTitle("Login");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(null);
-        // Login
-        lblLogin = new JLabel("Login: ");
-        lblLogin.setSize(150, 30);
-        lblLogin.setLocation(220, 200);
-        add(lblLogin);
-        lblLogin.setForeground(new Color(0,128,0));
-
-        lblUsuario = new JLabel("Usuario:");
-        lblUsuario.setSize(150, 30);
-        lblUsuario.setLocation(130, 230);
-        add(lblUsuario);
-        lblUsuario.setForeground(new Color(0,128,0));
-
-        txtLogin = new JTextField("");
-        txtLogin.setSize(150, 30);
-        txtLogin.setLocation(200, 230);
-        add(txtLogin);
-
-        lblSenha = new JLabel("Senha");
-        lblSenha.setSize(150, 30);
-        lblSenha.setLocation(140, 270);
-        add(lblSenha);
-        lblSenha.setForeground(new Color(0,128,0));
-        txtSenha = new JPasswordField();
-        txtSenha.setSize(150, 30);
-        txtSenha.setLocation(200, 270);
-        add(txtSenha);
-
-        btnLogin = new JButton("Login");
-        btnLogin.setSize(100, 30);
-        btnLogin.setLocation(220, 360);
-        btnLogin.addActionListener(this);
-        add(btnLogin);
-        btnLogin.setBackground(new Color(0,200,50));
-        btnLogin.setForeground(new Color(0,128,0));
-
-        // Cadastro
-        lblCriarConta = new JLabel("É novo por aqui:");
-        lblCriarConta.setSize(100, 30);
-        lblCriarConta.setLocation(100, 400);
-        add(lblCriarConta);
-        lblCriarConta.setForeground(new Color(0,100,0));
-
-        btnCriarConta = new JButton("Cadastrar");
-        btnCriarConta.setSize(100, 30);
-        btnCriarConta.setLocation(220, 400);
-        btnCriarConta.addActionListener(this);
-        add(btnCriarConta);
-        btnCriarConta.setBackground(new Color(0,200,50));
-        btnCriarConta.setForeground(new Color(0,100,0));
-        
-        // NUNCA MEXA -- imagem de background --  NÃO MEXE NISSO
-         imgLogo = new ImageIcon(getClass().getResource("/img/LogoLogFit.png"));
-        lblLogo = new JLabel("",imgLogo,JLabel.CENTER);
-        lblLogo.setBounds(120,-20 , 250,250);
-        add(lblLogo);
-        
-        img = new ImageIcon(getClass().getResource("/img/background.jpeg")); // só altera o que está entre aspas por favor
-        lblImagem = new JLabel("", img, JLabel.CENTER);
-        lblImagem.setBounds(0, -75, 500, 600); // só altera essa linha aqui pelo amor de deus
-        add(lblImagem);
-        
-       
-
+        initComponents();
     }
 
-    public static void main(String[] args) {
-        new Intro().setVisible(true);
-    }
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-    @Override
-    public void actionPerformed(ActionEvent e) { 
-        
-        // ação do botão Criar conta
-        if (e.getSource() == btnCriarConta) {
+        lblEsquecerSenha = new javax.swing.JLabel();
+        btnCadastrar = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
+        lblLembrar = new javax.swing.JLabel();
+        btnLembrar = new javax.swing.JToggleButton();
+        txtSenha = new javax.swing.JPasswordField();
+        lblSenha = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
+        txtLogin = new javax.swing.JTextField();
+        lblLogo = new javax.swing.JLabel();
+        lblBackground = new javax.swing.JLabel();
+
+        setTitle("Tela de Login");
+        getContentPane().setLayout(null);
+
+        lblEsquecerSenha.setBackground(new java.awt.Color(255, 255, 255));
+        lblEsquecerSenha.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        lblEsquecerSenha.setForeground(new java.awt.Color(255, 255, 255));
+        lblEsquecerSenha.setText("Esqueceu sua senha?");
+        getContentPane().add(lblEsquecerSenha);
+        lblEsquecerSenha.setBounds(350, 480, 150, 16);
+
+        btnCadastrar.setBackground(new java.awt.Color(3, 129, 0));
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        btnCadastrar.setForeground(new java.awt.Color(0, 0, 0));
+        btnCadastrar.setText("CADASTRAR");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCadastrar);
+        btnCadastrar.setBounds(490, 430, 130, 40);
+
+        btnLogin.setBackground(new java.awt.Color(3, 129, 0));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(0, 0, 0));
+        btnLogin.setText("LOGIN");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLogin);
+        btnLogin.setBounds(350, 430, 130, 40);
+
+        lblLembrar.setBackground(new java.awt.Color(255, 255, 255));
+        lblLembrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblLembrar.setForeground(new java.awt.Color(255, 255, 255));
+        lblLembrar.setText("Lembrar-me");
+        getContentPane().add(lblLembrar);
+        lblLembrar.setBounds(380, 390, 100, 20);
+
+        btnLembrar.setToolTipText("");
+        btnLembrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnLembrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLembrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLembrar);
+        btnLembrar.setBounds(350, 390, 25, 25);
+
+        txtSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(txtSenha);
+        txtSenha.setBounds(350, 330, 270, 40);
+
+        lblSenha.setBackground(new java.awt.Color(255, 255, 255));
+        lblSenha.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblSenha.setForeground(new java.awt.Color(255, 255, 255));
+        lblSenha.setText("Senha:");
+        getContentPane().add(lblSenha);
+        lblSenha.setBounds(350, 310, 130, 16);
+
+        lblNome.setBackground(new java.awt.Color(255, 255, 255));
+        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblNome.setForeground(new java.awt.Color(255, 255, 255));
+        lblNome.setText("Nome do Usuário:");
+        getContentPane().add(lblNome);
+        lblNome.setBounds(350, 240, 130, 16);
+
+        txtLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        getContentPane().add(txtLogin);
+        txtLogin.setBounds(350, 260, 270, 40);
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LogoLogFit.png"))); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(330, 50, 290, 200);
+
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background.jpeg"))); // NOI18N
+        getContentPane().add(lblBackground);
+        lblBackground.setBounds(0, 0, 970, 640);
+
+        setSize(new java.awt.Dimension(982, 646));
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLembrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLembrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLembrarActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        if (evt.getSource() == btnCadastrar) {
             new Cadastro().setVisible(true); // chama o formulario de criar conta
             dispose(); // fecha ao clicar no botão
         }
-        
-        //Ação botão logar
-        if(e.getSource() == btnLogin ){
+    }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        if(evt.getSource() == btnLogin ){
             
         String senha;// fazendo uma variavel pra receber a senha
         senha = txtSenha.getText();// pegando a senha
@@ -121,16 +135,55 @@ public class Intro extends JFrame implements ActionListener {
         if(status ==true){
             Usuario usuario = dao.consultar(senha,login);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar
             if(usuario == null){ // se o obj usuario for nulo senha incorreta
-                JOptionPane.showMessageDialog(null, "Login ou Senha incorreta");
+                JOptionPane.showMessageDialog(null, "Login ou Senha incorreto.");
             }else{// se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit
                 new LogFit(usuario).setVisible(true);
                 dispose();
             }
             dao.desconectar();
         }else{ // esse é o else do primeiro IF
-            JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados");
+            JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados.");
         }
 
         }
-    }   
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    public static void main(String args[]) {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Intro().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JToggleButton btnLembrar;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblEsquecerSenha;
+    private javax.swing.JLabel lblLembrar;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblSenha;
+    private javax.swing.JTextField txtLogin;
+    private javax.swing.JPasswordField txtSenha;
+    // End of variables declaration//GEN-END:variables
 }
