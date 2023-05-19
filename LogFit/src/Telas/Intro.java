@@ -117,33 +117,33 @@ public class Intro extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         if (evt.getSource() == btnCadastrar) {
-            new Cadastro().setVisible(true); // chama o formulario de criar conta
-            dispose(); // fecha ao clicar no botão
+            new Cadastro().setVisible(true); // Chama a tela de cadastro.
+            dispose(); // Ao clicar no botão a tela é fechada.
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        if(evt.getSource() == btnLogin ){
-            
-        String senha;// fazendo uma variavel pra receber a senha
-        senha = txtSenha.getText();// pegando a senha
-        String login;
-        login = txtLogin.getText();
-        UsuarioDAO dao = new UsuarioDAO();// Pra chamar as funçoes precisa fazer isso
-        boolean status = dao.conectar(); // chamando o metodo/função conectar
-        
-        if(status ==true){
-            Usuario usuario = dao.consultar(senha,login);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar
-            if(usuario == null){ // se o obj usuario for nulo senha incorreta
-                JOptionPane.showMessageDialog(null, "Login ou Senha incorreto.");
-            }else{// se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit
-                new LogFit(usuario).setVisible(true);
-                dispose();
+        if (evt.getSource() == btnLogin) {
+
+            String senha; // Variável para receber a senha.
+            senha = txtSenha.getText(); // Pegando a senha.
+            String login; // Variável para receber o login.
+            login = txtLogin.getText(); // Pegando o login.
+            UsuarioDAO dao = new UsuarioDAO();// Pra chamar as funçoes precisa fazer isso.
+            boolean status = dao.conectar(); // Chamando o metodo/função conectar.
+
+            if (status == true) {
+                Usuario usuario = dao.consultar(senha, login);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar.
+                if (usuario == null) { // Se o obj usuario for nulo a senha está incorreta.
+                    JOptionPane.showMessageDialog(null, "Login ou Senha incorreto."); // Mensagem de erro de login ou senha.
+                } else {// Se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit.
+                    new LogFit(usuario).setVisible(true); // Chama a tela de usuário.
+                    dispose(); // Ao clicar no botão a tela é fechada.
+                }
+                dao.desconectar();
+            } else { // esse é o else do primeiro IF
+                JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados."); // Mensagem de erro de conexão com o banco de dados.
             }
-            dao.desconectar();
-        }else{ // esse é o else do primeiro IF
-            JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados.");
-        }
 
         }
     }//GEN-LAST:event_btnLoginActionPerformed

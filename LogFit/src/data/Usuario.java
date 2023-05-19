@@ -5,7 +5,7 @@ public class Usuario {
     private String nome;
     private String endereco;
     private String cep;
-    private String Estado;
+    private String estado;
     private double peso;
     private double pesoIdeal;
     private double altura;
@@ -14,6 +14,7 @@ public class Usuario {
     private String login;
     private String cpf;
     private String email;
+    private String sexo;    
     
     public Usuario() {
     }
@@ -24,7 +25,7 @@ public class Usuario {
 
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
-    }
+    } 
 
     public String getNome() {
         return nome;
@@ -51,11 +52,11 @@ public class Usuario {
     }
 
     public String getEstado() {
-        return Estado;
+        return estado;
     }
 
-    public void setEstado(String Estado) {
-        this.Estado = Estado;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public double getPeso() {
@@ -121,6 +122,14 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
     
     
