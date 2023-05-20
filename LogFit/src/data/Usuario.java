@@ -1,6 +1,7 @@
 package data;
 
 public class Usuario {
+
     private int idusuario;
     private String nome;
     private String endereco;
@@ -14,8 +15,8 @@ public class Usuario {
     private String login;
     private String cpf;
     private String email;
-    private String sexo;    
-    
+    private String sexo;
+
     public Usuario() {
     }
 
@@ -25,7 +26,7 @@ public class Usuario {
 
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
-    } 
+    }
 
     public String getNome() {
         return nome;
@@ -68,7 +69,7 @@ public class Usuario {
     }
 
     public double getPesoIdeal() { // Aqui o usuario n vai inserir vai calcular automaticamente e mandar pro banco
-        pesoIdeal = peso /(altura*altura); // ai quando ele(a) fizer o login vai aparecer o peso ideal pra cada pessoa -- tem que testar
+        pesoIdeal = peso / (altura * altura); // ai quando ele(a) fizer o login vai aparecer o peso ideal pra cada pessoa -- tem que testar
         return pesoIdeal;
     }
 
@@ -123,7 +124,7 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     public String getSexo() {
         return sexo;
     }
@@ -131,6 +132,5 @@ public class Usuario {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-    
-    
+
 }
