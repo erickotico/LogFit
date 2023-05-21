@@ -4,13 +4,13 @@ import data.Usuario;
 import data.UsuarioDAO;
 import javax.swing.JOptionPane;
 
-public class Intro extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
-    public Intro() {
+    public Login() {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked") // DESIGN DA TELA DE LOGIN.
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -117,32 +117,32 @@ public class Intro extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         if (evt.getSource() == btnCadastrar) {
-            new Cadastro().setVisible(true); // Chama a tela de cadastro.
-            dispose(); // Ao clicar no botão a tela é fechada.
+            new Cadastro().setVisible(true); // CHAMA A TELA DE CADASTRO.
+            dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         if (evt.getSource() == btnLogin) {
 
-            String senha; // Variável para receber a senha.
-            senha = txtSenha.getText(); // Pegando a senha.
-            String login; // Variável para receber o login.
-            login = txtLogin.getText(); // Pegando o login.
-            UsuarioDAO dao = new UsuarioDAO();// Pra chamar as funçoes precisa fazer isso.
-            boolean status = dao.conectar(); // Chamando o metodo/função conectar.
+            String senha; // VARIÁVEL PARA RECEBER A SENHA.
+            senha = txtSenha.getText(); // PEGA A SENHA.
+            String login; // VARIÁVEL PARA RECEBER O LOGIN.
+            login = txtLogin.getText(); // PEGA O LOGIN.
+            UsuarioDAO dao = new UsuarioDAO(); // PRA CHAMAR AS FUNÇOES PRECISA FAZER ISSO.
+            boolean status = dao.conectar(); // CHAMANDO O METODO/FUNÇÃO CONECTAR.
 
             if (status == true) {
-                Usuario usuario = dao.consultar(senha, login);// Chamando o metodo/função consultar e passando a senha que na função/metodo é obrigatorio -- obj da classe funcionario vai receber o que quero consultar.
-                if (usuario == null) { // Se o obj usuario for nulo a senha está incorreta.
-                    JOptionPane.showMessageDialog(null, "Login ou Senha incorreto."); // Mensagem de erro de login ou senha.
-                } else {// Se não estiver nulo faz o login -- mas como fazemos pros itens irem dq pra tela LogFit.
-                    new LogFit(usuario).setVisible(true); // Chama a tela de usuário.
-                    dispose(); // Ao clicar no botão a tela é fechada.
+                Usuario usuario = dao.consultar(senha, login); // CHAMANDO O METODO/FUNÇÃO CONSULTAR E PASSANDO A SENHA QUE NA FUNÇÃO/METODO É OBRIGATORIO -- OBJETO DA CLASSE FUNCIONARIO VAI RECEBER O QUE QUERO CONSULTAR.
+                if (usuario == null) { // SE O OBJETO USUARIO FOR NULO A SENHA ESTÁ INCORRETA.
+                    JOptionPane.showMessageDialog(null, "Login ou Senha incorreto."); // MENSAGEM DE ERRO DE LOGIN OU SENHA.
+                } else { // SE NÃO ESTIVER NULO FAZ O LOGIN -- MAS COMO FAZEMOS PROS ITENS IREM DQ PRA TELA LOGFIT.
+                    new LogFit(usuario).setVisible(true); // CHAMA A TELA DE USUÁRIO.
+                    dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
                 }
                 dao.desconectar();
-            } else { // esse é o else do primeiro IF
-                JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados."); // Mensagem de erro de conexão com o banco de dados.
+            } else { // ESSE É O ELSE DO PRIMEIRO IF
+                JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados."); // MENSAGEM DE ERRO DE CONEXÃO COM O BANCO DE DADOS.
             }
 
         }
@@ -157,18 +157,18 @@ public class Intro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Intro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Intro().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }

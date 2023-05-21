@@ -7,12 +7,12 @@ public class LogFit extends javax.swing.JFrame {
     public LogFit(Usuario usuario) {
         initComponents();
         txtNome.setText(usuario.getNome());
-        txtAltura.setText(String.valueOf(usuario.getAltura())); // Precisa colocar as textBox pra funcionar 
-        // LER O UsuarioDAO função consultar() pls
+        txtAltura.setText(String.valueOf(usuario.getAltura())); // PRECISA COLOCAR AS TEXTBOX PRA FUNCIONAR.
+        // LER O UsuarioDAO FUNÇÃO CONSULTAR() ANTES.
 
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked") // DESIGN DA TELA DE USUÁRIO.
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -57,8 +57,8 @@ public class LogFit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new Intro().setVisible(true); // ISSO AQUI É SÓ PRA N TER QUE FICAR FECHANDO TODA HORA E RE RODANDO O CODIGO PODE TIRAR QUANDO q
-        dispose();
+        new Login().setVisible(true); // CHAMA A TELA DE LOGIN (TEMPORÁRIO).
+        dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed

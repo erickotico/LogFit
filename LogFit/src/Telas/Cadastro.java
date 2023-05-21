@@ -10,7 +10,7 @@ public class Cadastro extends javax.swing.JFrame {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked") // DESIGN DA TELA DE CADASTRO.
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -219,14 +219,14 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         if (evt.getSource() == btnVoltar) {
-            new Intro().setVisible(true);
-            dispose();
+            new Login().setVisible(true); // CHAMA A TELA DE LOGIN.
+            dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
         }
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         if (evt.getSource() == btnSalvar) {
-            // Instanciando o objeto da classe funcionario
+            // INSTANCIANDO O OBJETO DA CLASSE FUNCIONÁRIO.
             Usuario usuario;
             usuario = new Usuario();
 
@@ -235,7 +235,7 @@ public class Cadastro extends javax.swing.JFrame {
             boolean status;
             int resp;
 
-            // Quando o btn for apertado vai pegar esses itens -- colocar -- COLOCA EM ORDEM pls
+            // QUANDO O BOTÃO FOR APERTADO VAI PEGAR ESSES ITENS -- MANTER NA ORDEM.
             usuario.setNome(txtUsuario.getText());
             usuario.setSenha(txtSenha.getText());
             usuario.setEndereco(txtEndereco.getText());
@@ -249,19 +249,19 @@ public class Cadastro extends javax.swing.JFrame {
             usuario.setLogin(txtLogin.getText());
             usuario.setEmail(txtEmail.getText());
 
-            status = dao.conectar(); // Aqui estamos fazendo a con com o banco
+            status = dao.conectar(); // FAZENDO A con COM O BANCO.
             if (status == false) {
-                JOptionPane.showMessageDialog(null, "Erro na conexão com o banco de dados");
-            } else { // o else é pq conectou ent chamo o metodo/função salvar
-                resp = dao.salvar(usuario);// AQUI É O COMANDO INSERT
-                if (resp == 1) { // se ela for 1 deu tudo certo -- NÃO mudar pra switch-case
-                    JOptionPane.showMessageDialog(null, "Bem Vindo");
-                    new LogFit(usuario).setVisible(true);
-                    dispose();
+                JOptionPane.showMessageDialog(null, "Erro na conexão com o banco de dados"); // MENSAGEM DE ERRO DE CONEXÃO COM O BANCO DE DADOS.
+            } else { // O ELSE CONECTOU O METODO/FUNÇÃO SALVAR.
+                resp = dao.salvar(usuario);// AQUI É O COMANDO INSERT.
+                if (resp == 1) { // SE ELA FOR 1 DEU TUDO CERTO -- NÃO MUDAR PRA SWITCH-CASE.
+                    JOptionPane.showMessageDialog(null, "Bem Vindo"); // MENSAGEM DE BEM VINDO.
+                    new LogFit(usuario).setVisible(true); // CHAMA A TELA DE USUÁRIO.
+                    dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
                 } else if (resp == 1062) {
-                    JOptionPane.showMessageDialog(null, "Essa matricula ja foi cadastrada");
+                    JOptionPane.showMessageDialog(null, "Essa matricula ja foi cadastrada"); // MENSAGEM DE MATRICULA JÁ CADASTRADA.
                 } else {
-                    JOptionPane.showMessageDialog(null, "Erro ao tentar Cadastrar o Usuario");
+                    JOptionPane.showMessageDialog(null, "Erro ao tentar Cadastrar o Usuario"); // MENSAGEM DE ERRO AO TENTAR CADASTRAL TAL MATRICULA.
                 }
 
             }
