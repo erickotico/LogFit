@@ -8,7 +8,7 @@ O LogFit é uma aplicação de software poderosa e fácil de usar, projetada esp
 
 ## Tecnologias utilizadas:
 * **🍵 [Java](https://www.java.com/pt-BR/):** Linguagem de programação.
-* **🧮 [MySQL Workbench](https://www.mysql.com/products/workbench/):** Base de dados.
+* **🧮 [MySQL Workbench](https://www.mysql.com/products/workbench/):** Banco de dados.
 * **💻 [Apache NetBeans IDE 17](https://netbeans.apache.org/download/nb17/):** Software de desenvolvimento.
 
 ## Como Utilizar:
