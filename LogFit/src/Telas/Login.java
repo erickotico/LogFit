@@ -57,6 +57,11 @@ public class Login extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
+        btnLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnLoginKeyPressed(evt);
+            }
+        });
         getContentPane().add(btnLogin);
         btnLogin.setBounds(350, 430, 130, 40);
 
@@ -78,6 +83,11 @@ public class Login extends javax.swing.JFrame {
         btnLembrar.setBounds(350, 390, 25, 25);
 
         txtSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
         getContentPane().add(txtSenha);
         txtSenha.setBounds(350, 330, 270, 40);
 
@@ -96,6 +106,11 @@ public class Login extends javax.swing.JFrame {
         lblNome.setBounds(350, 240, 130, 16);
 
         txtLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtLoginKeyPressed(evt);
+            }
+        });
         getContentPane().add(txtLogin);
         txtLogin.setBounds(350, 260, 270, 40);
 
@@ -147,6 +162,24 @@ public class Login extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            txtSenha.requestFocus();
+        }
+    }//GEN-LAST:event_txtLoginKeyPressed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            btnLogin.requestFocus();
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
+
+    private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            btnLogin.doClick();
+        }
+    }//GEN-LAST:event_btnLoginKeyPressed
 
     public static void main(String args[]) {
         try {
