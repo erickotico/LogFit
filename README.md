@@ -20,6 +20,16 @@ O LogFit é uma aplicação de software poderosa e fácil de usar, projetada esp
 * Execute o programa principal em `LogFit\LogFit\dist\LogFit.Jar` para iniciar a aplicação.
 * Siga as instruções fornecidas pela interface do programa para começar a utilizar os recursos disponíveis.
 
+## Telas Preview:
+
+<p align="center">
+  <img width="963" height="631" src="LogFit/src/img/telalogin.png">
+</p>
+
+<p align="center">
+  <img width="963" height="631" src="LogFit/src/img/telacadastro.png">
+</p>
+
 ## Licença:
 
 Este projeto é licenciado sob a Licença MIT, o que significa que você tem permissão para usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do software, sujeito às condições estabelecidas na licença.
