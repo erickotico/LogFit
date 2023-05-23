@@ -1,26 +1,23 @@
 package data;
 
 public class Usuario {
-
-    //private int idusuario;
+    private int idusuario;
     private String nome;
-    private String senha;
     private String endereco;
-    private String telefone;
-    private String estado;
-    private double altura;
     private String cep;
-    private String cpf;
+    private String Estado;
     private double peso;
     private double pesoIdeal;
-    private String sexo;
+    private double altura;
+    private String senha;
+    private String telefone;
     private String login;
+    private String cpf;
     private String email;
-
+    
     public Usuario() {
     }
 
-    /**
     public int getIdusuario() {
         return idusuario;
     }
@@ -28,7 +25,6 @@ public class Usuario {
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
     }
-**/
 
     public String getNome() {
         return nome;
@@ -55,11 +51,11 @@ public class Usuario {
     }
 
     public String getEstado() {
-        return estado;
+        return Estado;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
     }
 
     public double getPeso() {
@@ -70,8 +66,8 @@ public class Usuario {
         this.peso = peso;
     }
 
-    public double getPesoIdeal() { // AQUI O USUÁRIO NÃO VAI INSERIR VAI CALCULAR AUTOMATICAMENTE E MANDAR PRO BANCO.
-        pesoIdeal = peso / (altura * altura); // AI QUANDO ELE(A) FIZER O LOGIN VAI APARECER O PESO IDEAL PRA CADA PESSOA -- TEM QUE TESTAR.
+    public double getPesoIdeal() { // Aqui o usuario n vai inserir vai calcular automaticamente e mandar pro banco
+        pesoIdeal = peso /(altura*altura); // ai quando ele(a) fizer o login vai aparecer o peso ideal pra cada pessoa -- tem que testar
         return pesoIdeal;
     }
 
@@ -126,13 +122,6 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
+    
+    
 }
