@@ -17,7 +17,7 @@ import javax.swing.JPasswordField;
 public class Cadastro extends JFrame implements ActionListener {
 
 //variaveis de String 
-    JLabel lblNome, lblEndereco, lblCep, lblEstado, lblSenha, lblTelefone, lblLogin, lblCpf;
+    JLabel lblTitulo, lblNome, lblEndereco, lblCep, lblEstado, lblSenha, lblTelefone, lblLogin, lblCpf;
     JTextField txtNome, txtEndereco, txtCep, txtEstado, txtTelefone, txtLogin, txtCpf;
     JPasswordField txtSenha;
 
@@ -26,12 +26,9 @@ public class Cadastro extends JFrame implements ActionListener {
     JComboBox<String> genero = new JComboBox<>(sexo);
 
     //variaveis de inteiros alterar depois
-    JLabel lblAltura;
-    JTextField txtAltura;
-
-    JLabel lblPeso;
-    JTextField txtPeso;
-
+    JLabel lblAltura, lblPeso;
+    JTextField txtAltura, txtPeso;
+    
     //Botoes
     JButton btnVotlar, btnCadastrar;
 
@@ -46,10 +43,17 @@ public class Cadastro extends JFrame implements ActionListener {
         setTitle("Cadastro de Usuario");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+        
+        lblTitulo = new JLabel("Cadastro");
+        lblTitulo.setSize(200,200);
+        lblTitulo.setFont(new java.awt.Font("Times New Roman", 3, 36));// realiza a mudança de fonte,estilo e tamanho da fonte.  
+        lblTitulo.setLocation(200,-50);
+        lblTitulo.setForeground(new Color(0,128,0));
+        add(lblTitulo);
 
         // NOME
         lblNome = new JLabel("Nome");
-        lblNome.setSize(90, 20);
+        lblNome.setSize(90, 20); 
         lblNome.setLocation(30, 100);
         lblNome.setForeground(new Color(0, 128, 0));
         add(lblNome);
@@ -218,7 +222,7 @@ public class Cadastro extends JFrame implements ActionListener {
             usuario.setEstado(txtEstado.getText());
             usuario.setTelefone(txtTelefone.getText());
             usuario.setLogin(txtLogin.getText());
-            usuario.setSenha(txtSenha.getText());
+            usuario.setSenha(new String(txtSenha.getPassword()));
             usuario.setAltura(Double.parseDouble(txtAltura.getText()));
 
             status = dao.conectar(); // Aqui estamos fazendo a con com o banco
