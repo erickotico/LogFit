@@ -198,7 +198,7 @@
     <Component class="javax.swing.JLabel" name="lblLogo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/LogoLogFit.png"/>
+          <Image iconType="3" name="/images/LogoLogFit.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -210,7 +210,7 @@
     <Component class="javax.swing.JLabel" name="lblBackground">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/background.jpeg"/>
+          <Image iconType="3" name="/images/background.jpeg"/>
         </Property>
       </Properties>
       <Constraints>

@@ -1,4 +1,4 @@
-package Telas;
+package view;
 
 import data.Usuario;
 import data.UsuarioDAO;
@@ -221,7 +221,7 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(lblEmail);
         lblEmail.setBounds(610, 410, 130, 16);
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LogoLogFit.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoLogFit.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(340, 10, 290, 200);
 
@@ -279,7 +279,7 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(lblLogin);
         lblLogin.setBounds(450, 410, 130, 16);
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background.jpeg"))); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 980, 640);
 

@@ -1,4 +1,4 @@
-package Telas;
+package view;
 
 import data.Usuario;
 import data.UsuarioDAO;
@@ -114,11 +114,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(txtLogin);
         txtLogin.setBounds(350, 260, 270, 40);
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/LogoLogFit.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoLogFit.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(330, 50, 290, 200);
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background.jpeg"))); // NOI18N
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 970, 640);
 
