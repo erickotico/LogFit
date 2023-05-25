@@ -23,11 +23,11 @@ O LogFit é uma aplicação de software poderosa e fácil de usar, projetada esp
 ## Telas Preview:
 
 <p align="center">
-  <img width="963" height="631" src="LogFit/src/img/telalogin.png">
+  <img width="963" height="631" src="LogFit/src/images/telalogin.png">
 </p>
 
 <p align="center">
-  <img width="963" height="631" src="LogFit/src/img/telacadastro.png">
+  <img width="963" height="631" src="LogFit/src/images/telacadastro.png">
 </p>
 
 ## Licença:
