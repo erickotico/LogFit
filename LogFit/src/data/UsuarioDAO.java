@@ -10,26 +10,23 @@ public class UsuarioDAO {
 
     Connection conn;
     PreparedStatement st;
-    ResultSet rs; // PRA FUNÇÃO CONSULTAR QUE VAMOS USAR COMO LOGIN.
+    ResultSet rs;
 
-    //FUNÇÃO FAZ TODOS OS TRAMITS DE CONEXÃO.
-    public boolean conectar() { // SÓ CHAMAR O CONECTAR() NO BOTÃO DE LOGIN E NO DE CADASTRO.
+    public boolean conectar() {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_logfit", "root", "123456"); // URL - USUARIO - SENHA <- DO BANCO LÓGICO.
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_logfit", "root", "123456");
             return true;
         } catch (ClassNotFoundException | SQLException ex) {
             return false;
         }
     }
 
-    // Função faz o insert
     public int salvar(Usuario usuario) {
         int status;
         try {
-            st = conn.prepareStatement("INSERT INTO cadastro VALUES(default,?,?,?,?,?,?,?,?,?,?,?,?,?)"); // OS ? REPESENTAM O QUE VAI SER INSERIDO -- COLOCAR + SE PRECISAR.
-            // OBJETO USUÁRIO COLOCAR ISSO PRA FAZER A INSERÇÃO AQUI E NÃO NO BOTÃO.
+            st = conn.prepareStatement("INSERT INTO cadastro VALUES(default,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             st.setString(1, usuario.getNome());
             st.setString(2, usuario.getSenha());
             st.setString(3, usuario.getEndereco());
@@ -43,7 +40,6 @@ public class UsuarioDAO {
             st.setString(11, usuario.getSexo());
             st.setString(12, usuario.getLogin());
             st.setString(13, usuario.getEmail());
-
             status = st.executeUpdate(); // EXECUTANDO O QUE FOI COLOCADO NA LINHA DE CIMA.
             return status; // AQUI VAI RETORNAR 1 PORQUE QUANDO VC EXECUTA O COMANDO INSERT ELE INSERE NO BANCO E VOLTA O VALOR 1 OU SEJA DEU CERTO.
         } catch (SQLException ex) { // EX RECEBE AS EXEÇOES OU SEJA GEREALMENTE ERRO
@@ -61,24 +57,21 @@ public class UsuarioDAO {
         }
     }
 
-    public Usuario consultar(String senha, String login) { // <-- PASSAR O PARÂMETRO LOGIN E SENHA É OBRIGATÓRIO -- O USUÁRIO DEPOIS DE PUBLIC É PQ VAI RETORNAR UM OBJETO USUÁRIO.
+    public Usuario consultar(String senha, String login) {
         try {
-            Usuario usuario = new Usuario();  // PODE DECLARAR AQUI OU LÁ EM CIMA MAS SÓ VOU USAR AQUI MESMO.
-
-            st = conn.prepareStatement("SELECT * FROM cadastro WHERE senha = ? AND login = ?"); // VAI CONECTAR E FAZER O COMANDO SELECT.
-            st.setString(1, senha); // VAI PUXAR A SENHA.
-            st.setString(2, login); // VAI PUXAR O LOGIN.
-
+            Usuario usuario = new Usuario(); 
+            st = conn.prepareStatement("SELECT * FROM cadastro WHERE senha = ? AND login = ?");
+            st.setString(1, senha);
+            st.setString(2, login);
             rs = st.executeQuery(); // A VARIAVEL RS É PRA GUARDAR O QUE FOI GERADO.
             // VERIFICA SE A CONSULTA ENCONTROU O FUNCIONÁRIO COM A MATRICULA INFORMADA.
             if (rs.next()) { // SE ENCONTROU O USUÁRIO.
                 // COLOCAR OS OUTROS ITENS DO USUÁRIO AQUI.
                 // SÓ COLOCA AQUI QUANDO TIVER AS TEXT BOX.
-                usuario.setNome(rs.getString("nome")); // VAI COLOCAR A NOME E JOGAR NO OBJETO USUÁRIO.
+                usuario.setNome(rs.getString("nome"));
                 usuario.setAltura(rs.getDouble("altura"));
                 //usuario.setPesoIdeal(rs.getDouble("Peso Ideal"));
-
-                return usuario; // TEM QUE RETORNAR UM OBJETO DA CLASSE FUNCIONÁRIO PRA PODER CHECAR.
+                return usuario;
             } else {
                 return null;
             }

@@ -10,7 +10,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked") // DESIGN DA TELA DE LOGIN.
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -114,7 +114,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(txtLogin);
         txtLogin.setBounds(350, 260, 270, 40);
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoLogFit.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(330, 50, 290, 200);
 
@@ -132,32 +132,32 @@ public class Login extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         if (evt.getSource() == btnCadastrar) {
-            new Cadastro().setVisible(true); // CHAMA A TELA DE CADASTRO.
-            dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
+            new Cadastro().setVisible(true);
+            dispose();
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         if (evt.getSource() == btnLogin) {
 
-            String senha; // VARIÁVEL PARA RECEBER A SENHA.
-            senha = txtSenha.getText(); // PEGA A SENHA.
-            String login; // VARIÁVEL PARA RECEBER O LOGIN.
-            login = txtLogin.getText(); // PEGA O LOGIN.
-            UsuarioDAO dao = new UsuarioDAO(); // PRA CHAMAR AS FUNÇOES PRECISA FAZER ISSO.
-            boolean status = dao.conectar(); // CHAMANDO O METODO/FUNÇÃO CONECTAR.
+            String senha;
+            senha = txtSenha.getText();
+            String login;
+            login = txtLogin.getText();
+            UsuarioDAO dao = new UsuarioDAO();
+            boolean status = dao.conectar();
 
             if (status == true) {
-                Usuario usuario = dao.consultar(senha, login); // CHAMANDO O METODO/FUNÇÃO CONSULTAR E PASSANDO A SENHA QUE NA FUNÇÃO/METODO É OBRIGATORIO -- OBJETO DA CLASSE FUNCIONARIO VAI RECEBER O QUE QUERO CONSULTAR.
-                if (usuario == null) { // SE O OBJETO USUARIO FOR NULO A SENHA ESTÁ INCORRETA.
-                    JOptionPane.showMessageDialog(null, "Login ou Senha incorreto."); // MENSAGEM DE ERRO DE LOGIN OU SENHA.
-                } else { // SE NÃO ESTIVER NULO FAZ O LOGIN -- MAS COMO FAZEMOS PROS ITENS IREM DQ PRA TELA LOGFIT.
-                    new LogFit(usuario).setVisible(true); // CHAMA A TELA DE USUÁRIO.
-                    dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
+                Usuario usuario = dao.consultar(senha, login);
+                if (usuario == null) {
+                    JOptionPane.showMessageDialog(null, "Login ou Senha incorreto.");
+                } else {
+                    new Home(usuario).setVisible(true);
+                    dispose();
                 }
                 dao.desconectar();
-            } else { // ESSE É O ELSE DO PRIMEIRO IF
-                JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados."); // MENSAGEM DE ERRO DE CONEXÃO COM O BANCO DE DADOS.
+            } else {
+                JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados.");
             }
 
         }

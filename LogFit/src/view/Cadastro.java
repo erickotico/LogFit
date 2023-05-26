@@ -10,7 +10,7 @@ public class Cadastro extends javax.swing.JFrame {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked") // DESIGN DA TELA DE CADASTRO.
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -221,7 +221,7 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(lblEmail);
         lblEmail.setBounds(610, 410, 130, 16);
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LogoLogFit.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(340, 10, 290, 200);
 
@@ -281,7 +281,7 @@ public class Cadastro extends javax.swing.JFrame {
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
-        lblBackground.setBounds(0, 0, 980, 640);
+        lblBackground.setBounds(0, 0, 970, 640);
 
         setSize(new java.awt.Dimension(982, 646));
         setLocationRelativeTo(null);
@@ -289,14 +289,13 @@ public class Cadastro extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         if (evt.getSource() == btnVoltar) {
-            new Login().setVisible(true); // CHAMA A TELA DE LOGIN.
-            dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
+            new Login().setVisible(true);
+            dispose();
         }
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         if (evt.getSource() == btnSalvar) {
-            // INSTANCIANDO O OBJETO DA CLASSE FUNCIONÁRIO.
             Usuario usuario;
             usuario = new Usuario();
 
@@ -305,7 +304,6 @@ public class Cadastro extends javax.swing.JFrame {
             boolean status;
             int resp;
 
-            // QUANDO O BOTÃO FOR APERTADO VAI PEGAR ESSES ITENS -- MANTER NA ORDEM.
             usuario.setNome(txtUsuario.getText());
             usuario.setSenha(txtSenha.getText());
             usuario.setEndereco(txtEndereco.getText());
@@ -318,20 +316,20 @@ public class Cadastro extends javax.swing.JFrame {
             usuario.setSexo(cmbSexo.getSelectedItem().toString());
             usuario.setLogin(txtLogin.getText());
             usuario.setEmail(txtEmail.getText());
-
+            
             status = dao.conectar(); // FAZENDO A con COM O BANCO.
             if (status == false) {
-                JOptionPane.showMessageDialog(null, "Erro na conexão com o banco de dados"); // MENSAGEM DE ERRO DE CONEXÃO COM O BANCO DE DADOS.
-            } else { // O ELSE CONECTOU O METODO/FUNÇÃO SALVAR.
-                resp = dao.salvar(usuario);// AQUI É O COMANDO INSERT.
+                JOptionPane.showMessageDialog(null, "Erro na conexão com o banco de dados");
+            } else {
+                resp = dao.salvar(usuario);
                 if (resp == 1) { // SE ELA FOR 1 DEU TUDO CERTO -- NÃO MUDAR PRA SWITCH-CASE.
-                    JOptionPane.showMessageDialog(null, "Bem Vindo"); // MENSAGEM DE BEM VINDO.
-                    new LogFit(usuario).setVisible(true); // CHAMA A TELA DE USUÁRIO.
-                    dispose(); // AO CLICAR NO BOTÃO A TELA É FECHADA.
+                    JOptionPane.showMessageDialog(null, "Bem Vindo");
+                    new Home(usuario).setVisible(true);
+                    dispose();
                 } else if (resp == 1062) {
-                    JOptionPane.showMessageDialog(null, "Essa matricula ja foi cadastrada"); // MENSAGEM DE MATRICULA JÁ CADASTRADA.
+                    JOptionPane.showMessageDialog(null, "Essa matricula ja foi cadastrada");
                 } else {
-                    JOptionPane.showMessageDialog(null, "Erro ao tentar Cadastrar o Usuario"); // MENSAGEM DE ERRO AO TENTAR CADASTRAL TAL MATRICULA.
+                    JOptionPane.showMessageDialog(null, "Erro ao tentar Cadastrar o Usuario");
                 }
 
             }
