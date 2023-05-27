@@ -305,7 +305,7 @@ public class Cadastro extends javax.swing.JFrame {
             int resp;
 
             usuario.setNome(txtUsuario.getText());
-            usuario.setSenha(txtSenha.getText());
+            usuario.setSenha(new String(txtSenha.getPassword()));
             usuario.setEndereco(txtEndereco.getText());
             usuario.setTelefone(txtTelefone.getText());
             usuario.setEstado(cmbEstado.getSelectedItem().toString());

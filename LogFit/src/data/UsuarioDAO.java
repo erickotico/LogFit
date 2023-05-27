@@ -16,7 +16,7 @@ public class UsuarioDAO {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_logfit", "root", "123456");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_logfit", "root", "admin");
             return true;
         } catch (ClassNotFoundException | SQLException ex) {
             return false;
@@ -26,7 +26,7 @@ public class UsuarioDAO {
     public int salvar(Usuario usuario) {
         int status;
         try {
-            st = conn.prepareStatement("INSERT INTO cadastro VALUES(default,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            st = conn.prepareStatement("INSERT INTO tb_cadastro VALUES(default,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             st.setString(1, usuario.getNome());
             st.setString(2, usuario.getSenha());
             st.setString(3, usuario.getEndereco());
@@ -60,7 +60,7 @@ public class UsuarioDAO {
     public Usuario consultar(String senha, String login) {
         try {
             Usuario usuario = new Usuario(); 
-            st = conn.prepareStatement("SELECT * FROM cadastro WHERE senha = ? AND login = ?");
+            st = conn.prepareStatement("SELECT * FROM tb_cadastro WHERE senha = ? AND login = ?");
             st.setString(1, senha);
             st.setString(2, login);
             rs = st.executeQuery(); // A VARIAVEL RS É PRA GUARDAR O QUE FOI GERADO.
