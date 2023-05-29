@@ -60,7 +60,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grafico.png"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(20, 210, 590, 360);
+        jLabel6.setBounds(20, 200, 590, 360);
 
         btnVoltar.setText("jButton1");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
