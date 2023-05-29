@@ -35,7 +35,7 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tabela.png"))); // NOI18N
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(580, 220, 360, 340);
+        jLabel1.setBounds(580, 210, 360, 340);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -44,15 +44,15 @@ public class Home extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IMC.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(550, 0, 420, 230);
+        jLabel3.setBounds(540, 0, 420, 230);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pesquisa.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(510, 590, 50, 40);
+        jLabel4.setBounds(510, 560, 50, 40);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(430, 590, 50, 40);
+        jLabel5.setBounds(430, 560, 50, 40);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frequencia.png"))); // NOI18N
         getContentPane().add(jLabel7);
@@ -60,7 +60,7 @@ public class Home extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grafico.png"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(20, 210, 590, 360);
+        jLabel6.setBounds(20, 180, 590, 360);
 
         btnVoltar.setText("jButton1");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +69,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVoltar);
-        btnVoltar.setBounds(440, 590, 30, 40);
+        btnVoltar.setBounds(440, 560, 30, 40);
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
