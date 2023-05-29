@@ -8,6 +8,8 @@ public class Home extends javax.swing.JFrame {
         initComponents();
     }
 
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         lblLogo = new javax.swing.JLabel();
@@ -26,37 +28,37 @@ public class Home extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(null);
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png")));
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(-40, 0, 280, 190);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tabela.png")));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tabela.png"))); // NOI18N
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(580, 220, 360, 340);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home.png")));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Home.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(640, 500, 40, 40);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IMC.png")));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IMC.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(550, 0, 420, 230);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pesquisa.png")));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pesquisa.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(510, 590, 50, 40);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png")));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         getContentPane().add(jLabel5);
         jLabel5.setBounds(430, 590, 50, 40);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frequencia.png")));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frequencia.png"))); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(230, -40, 570, 290);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grafico.png")));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grafico.png"))); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(20, 200, 590, 360);
 
@@ -69,21 +71,22 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(btnVoltar);
         btnVoltar.setBounds(440, 590, 30, 40);
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg")));
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 970, 640);
 
         setSize(new java.awt.Dimension(982, 646));
         setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         if (evt.getSource() == btnVoltar) {
             new Login().setVisible(true);
             dispose();
         }
-    }
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -94,4 +97,5 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblLogo;
+    // End of variables declaration//GEN-END:variables
 }

@@ -40,10 +40,10 @@ public class UsuarioDAO {
             st.setString(11, usuario.getSexo());
             st.setString(12, usuario.getLogin());
             st.setString(13, usuario.getEmail());
-            status = st.executeUpdate();
-            return status;
-        } catch (SQLException ex) {
-            System.out.println(ex.getErrorCode() + ex.getMessage());
+            status = st.executeUpdate(); // EXECUTANDO O QUE FOI COLOCADO NA LINHA DE CIMA.
+            return status; // AQUI VAI RETORNAR 1 PORQUE QUANDO VC EXECUTA O COMANDO INSERT ELE INSERE NO BANCO E VOLTA O VALOR 1 OU SEJA DEU CERTO.
+        } catch (SQLException ex) { // EX RECEBE AS EXEÇOES OU SEJA GEREALMENTE ERRO
+            System.out.println(ex.getErrorCode() + ex.getMessage()); // VAI MOSTRAR O CÓDIGO DO ERRO -- EX: 1062 TENTATIVA DE INSERIR UMA MATRICULA JA CADASTRADA.
             return ex.getErrorCode();
         }
     }
@@ -63,8 +63,11 @@ public class UsuarioDAO {
             st = conn.prepareStatement("SELECT * FROM tb_cadastro WHERE senha = ? AND login = ?");
             st.setString(1, senha);
             st.setString(2, login);
-            rs = st.executeQuery();
-            if (rs.next()) {
+            rs = st.executeQuery(); // A VARIAVEL RS É PRA GUARDAR O QUE FOI GERADO.
+            // VERIFICA SE A CONSULTA ENCONTROU O FUNCIONÁRIO COM A MATRICULA INFORMADA.
+            if (rs.next()) { // SE ENCONTROU O USUÁRIO.
+                // COLOCAR OS OUTROS ITENS DO USUÁRIO AQUI.
+                // SÓ COLOCA AQUI QUANDO TIVER AS TEXT BOX.
                 usuario.setNome(rs.getString("nome"));
                 usuario.setAltura(rs.getDouble("altura"));
                 //usuario.setPesoIdeal(rs.getDouble("Peso Ideal"));

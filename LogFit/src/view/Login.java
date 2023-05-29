@@ -2,7 +2,6 @@ package view;
 
 import data.Usuario;
 import data.UsuarioDAO;
-import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
@@ -11,6 +10,8 @@ public class Login extends javax.swing.JFrame {
         initComponents();
     }
 
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         lblEsquecerSenha = new javax.swing.JLabel();
@@ -29,14 +30,14 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         lblEsquecerSenha.setBackground(new java.awt.Color(255, 255, 255));
-        lblEsquecerSenha.setFont(new java.awt.Font("Segoe UI", 0, 15));
+        lblEsquecerSenha.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         lblEsquecerSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblEsquecerSenha.setText("Esqueceu sua senha?");
         getContentPane().add(lblEsquecerSenha);
         lblEsquecerSenha.setBounds(350, 480, 150, 16);
 
         btnCadastrar.setBackground(new java.awt.Color(3, 129, 0));
-        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 16));
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         btnCadastrar.setForeground(new java.awt.Color(0, 0, 0));
         btnCadastrar.setText("CADASTRAR");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         btnCadastrar.setBounds(490, 430, 130, 40);
 
         btnLogin.setBackground(new java.awt.Color(3, 129, 0));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 16));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(0, 0, 0));
         btnLogin.setText("LOGIN");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +66,7 @@ public class Login extends javax.swing.JFrame {
         btnLogin.setBounds(350, 430, 130, 40);
 
         lblLembrar.setBackground(new java.awt.Color(255, 255, 255));
-        lblLembrar.setFont(new java.awt.Font("Segoe UI", 0, 14));
+        lblLembrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblLembrar.setForeground(new java.awt.Color(255, 255, 255));
         lblLembrar.setText("Lembrar-me");
         getContentPane().add(lblLembrar);
@@ -77,15 +78,11 @@ public class Login extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLembrarActionPerformed(evt);
             }
-
-            private void btnLembrarActionPerformed(ActionEvent evt) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
         });
         getContentPane().add(btnLembrar);
         btnLembrar.setBounds(350, 390, 25, 25);
 
-        txtSenha.setFont(new java.awt.Font("Tahoma", 1, 14));
+        txtSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtSenhaKeyPressed(evt);
@@ -95,20 +92,20 @@ public class Login extends javax.swing.JFrame {
         txtSenha.setBounds(350, 330, 270, 40);
 
         lblSenha.setBackground(new java.awt.Color(255, 255, 255));
-        lblSenha.setFont(new java.awt.Font("Segoe UI", 0, 16));
+        lblSenha.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblSenha.setText("Senha:");
         getContentPane().add(lblSenha);
         lblSenha.setBounds(350, 310, 130, 16);
 
         lblNome.setBackground(new java.awt.Color(255, 255, 255));
-        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 16));
+        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblNome.setForeground(new java.awt.Color(255, 255, 255));
         lblNome.setText("Nome do Usuário:");
         getContentPane().add(lblNome);
         lblNome.setBounds(350, 240, 130, 16);
 
-        txtLogin.setFont(new java.awt.Font("Tahoma", 1, 14));
+        txtLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtLogin.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtLoginKeyPressed(evt);
@@ -117,26 +114,30 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(txtLogin);
         txtLogin.setBounds(350, 260, 270, 40);
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png")));
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(330, 50, 290, 200);
 
-        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg")));
+        lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 970, 640);
 
         setSize(new java.awt.Dimension(982, 646));
         setLocationRelativeTo(null);
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnLembrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLembrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLembrarActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         if (evt.getSource() == btnCadastrar) {
             new Cadastro().setVisible(true);
             dispose();
         }
-    }
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         if (evt.getSource() == btnLogin) {
 
             String senha;
@@ -160,25 +161,25 @@ public class Login extends javax.swing.JFrame {
             }
 
         }
-    }
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {
+    private void txtLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLoginKeyPressed
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
             txtSenha.requestFocus();
         }
-    }
+    }//GEN-LAST:event_txtLoginKeyPressed
 
-    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
             btnLogin.requestFocus();
         }
-    }
+    }//GEN-LAST:event_txtSenhaKeyPressed
 
-    private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {
+    private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyPressed
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
             btnLogin.doClick();
         }
-    }
+    }//GEN-LAST:event_btnLoginKeyPressed
 
     public static void main(String args[]) {
         try {
@@ -205,6 +206,7 @@ public class Login extends javax.swing.JFrame {
         });
     }
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JToggleButton btnLembrar;
     private javax.swing.JButton btnLogin;
@@ -216,4 +218,5 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lblSenha;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtSenha;
+    // End of variables declaration//GEN-END:variables
 }
