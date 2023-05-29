@@ -28,18 +28,18 @@ public class UsuarioDAO {
         try {
             st = conn.prepareStatement("INSERT INTO tb_cadastro VALUES(default,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             st.setString(1, usuario.getNome());
-            st.setString(2, usuario.getSenha());
+            st.setString(2, usuario.getCpf());
             st.setString(3, usuario.getEndereco());
-            st.setString(4, usuario.getTelefone());
+            st.setString(4, usuario.getCep());
             st.setString(5, usuario.getEstado());
-            st.setDouble(6, usuario.getAltura());
-            st.setString(7, usuario.getCep());
-            st.setString(8, usuario.getCpf());
+            st.setString(6, usuario.getTelefone());
+            st.setString(7, usuario.getEmail());
+            st.setDouble(8, usuario.getAltura());
             st.setDouble(9, usuario.getPeso());
             st.setDouble(10, usuario.getPesoIdeal());
-            st.setString(11, usuario.getSexo());
-            st.setString(12, usuario.getLogin());
-            st.setString(13, usuario.getEmail());
+            st.setString(11, usuario.getLogin());
+            st.setString(12, usuario.getSenha());
+            st.setString(13, usuario.getSexo());
             status = st.executeUpdate(); // EXECUTANDO O QUE FOI COLOCADO NA LINHA DE CIMA.
             return status; // AQUI VAI RETORNAR 1 PORQUE QUANDO VC EXECUTA O COMANDO INSERT ELE INSERE NO BANCO E VOLTA O VALOR 1 OU SEJA DEU CERTO.
         } catch (SQLException ex) { // EX RECEBE AS EXEÇOES OU SEJA GEREALMENTE ERRO
