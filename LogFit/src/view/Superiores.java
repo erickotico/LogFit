@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,14 +36,12 @@ public class Superiores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblImagem = new javax.swing.JLabel();
         btnProximo = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
+        lblImagem = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        lblImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/aero1.gif"))); // NOI18N
 
         btnProximo.setText("Proximo");
         btnProximo.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +51,11 @@ public class Superiores extends javax.swing.JFrame {
         });
 
         btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -65,29 +69,30 @@ public class Superiores extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 345, Short.MAX_VALUE)
+                .addGap(118, 118, 118)
+                .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnProximo, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSair, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(85, 85, 85))
+                    .addComponent(btnSair, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnProximo, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(203, 203, 203))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
                         .addComponent(btnProximo)
                         .addGap(18, 18, 18)
                         .addComponent(btnVoltar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSair)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 547, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addComponent(btnSair))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pack();
@@ -99,9 +104,19 @@ public class Superiores extends javax.swing.JFrame {
 
     
     private void btnProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximoActionPerformed
-        currentIndex = (currentIndex + 1) % imagePaths.length;
+        currentIndex = (currentIndex + 2) % imagePaths.length;
         updateImage();
     }//GEN-LAST:event_btnProximoActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        currentIndex = (currentIndex - 1) % imagePaths.length;
+        
+        if(currentIndex == -1){
+        JOptionPane.showMessageDialog(null, "Esse é o primeiro treino");
+        }else{updateImage();
+        
+        }
+    }//GEN-LAST:event_btnVoltarActionPerformed
     private void updateImage() {
     try {
         BufferedImage image = ImageIO.read(getClass().getResourceAsStream(imagePaths[currentIndex]));
