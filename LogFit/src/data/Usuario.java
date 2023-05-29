@@ -2,7 +2,7 @@ package data;
 
 public class Usuario {
 
-    //private int idusuario;
+    private int idusuario;
     private String nome;
     private String senha;
     private String endereco;
@@ -20,7 +20,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    /**
+ 
     public int getIdusuario() {
         return idusuario;
     }
@@ -28,7 +28,7 @@ public class Usuario {
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
     }
-**/
+
 
     public String getNome() {
         return nome;
