@@ -58,7 +58,7 @@ public class Home extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(230, -40, 570, 290);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grafico.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nyan-cat-1.gif"))); // NOI18N
         getContentPane().add(jLabel6);
         jLabel6.setBounds(20, 180, 590, 360);
 
