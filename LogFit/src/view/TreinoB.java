@@ -168,7 +168,7 @@ public class TreinoB extends javax.swing.JFrame {
         if (evt.getSource() == btnFinalizar) {
             new TreinoMenu(usuario).setVisible(true);
             dispose();
-            JOptionPane.showMessageDialog(null, "Treino Finalizado com Sucesso!");
+            JOptionPane.showMessageDialog(null,"Parabens "+ usuario.getNome() +" Treino Finalizado com Sucesso!");
         }
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
