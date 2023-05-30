@@ -1,5 +1,6 @@
 package view;
 
+import data.Usuario;
 import javax.swing.JOptionPane;
 
 public class TreinoB extends javax.swing.JFrame {
@@ -177,7 +178,8 @@ public class TreinoB extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            new Home().setVisible(true);
+            Usuario usuario = null;
+            new Home(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnHomeActionPerformed

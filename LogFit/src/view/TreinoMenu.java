@@ -1,5 +1,7 @@
 package view;
 
+import data.Usuario;
+
 public class TreinoMenu extends javax.swing.JFrame {
 
     public TreinoMenu() {
@@ -167,7 +169,8 @@ public class TreinoMenu extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            new Home().setVisible(true);
+            Usuario usuario = null;
+            new Home(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnHomeActionPerformed

@@ -4,9 +4,9 @@ import data.Usuario;
 
 public class Home extends javax.swing.JFrame {
 
-    public Home(Usuario usuario, String login) {
+    public Home(Usuario usuario) {
         initComponents();
-        lblSaudacao.setText("Bem-Vindo, " + login + "!");
+        lblSaudacao.setText("Bem-Vindo, " + "!");
     }
 
     @SuppressWarnings("unchecked")
@@ -99,7 +99,8 @@ public class Home extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            new Home().setVisible(true);
+            Usuario usuario = null;
+            new Home(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnHomeActionPerformed
