@@ -4,8 +4,11 @@ import data.Usuario;
 
 public class TreinoMenu extends javax.swing.JFrame {
 
-    public TreinoMenu() {
+    private final Usuario usuario;
+    
+    public TreinoMenu(Usuario usuario) {
         initComponents();
+        this.usuario = usuario;
     }
 
     @SuppressWarnings("unchecked")
@@ -177,28 +180,28 @@ public class TreinoMenu extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         if (evt.getSource() == btnIniciar) {
-            new TreinoA().setVisible(true);
+            new TreinoA(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnIniciar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciar2ActionPerformed
         if (evt.getSource() == btnIniciar2) {
-            new TreinoB().setVisible(true);
+            new TreinoB(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnIniciar2ActionPerformed
 
     private void btnIniciar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciar3ActionPerformed
         if (evt.getSource() == btnIniciar3) {
-            new TreinoC().setVisible(true);
+            new TreinoC(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnIniciar3ActionPerformed
 
     private void btnAcademiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcademiaActionPerformed
         if (evt.getSource() == btnAcademia) {
-            new TreinoMenu().setVisible(true);
+            new TreinoMenu(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnAcademiaActionPerformed
@@ -209,7 +212,6 @@ public class TreinoMenu extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            Usuario usuario = new Usuario();
             new Home(usuario).setVisible(true);
             dispose();
         }

@@ -3,9 +3,12 @@ package view;
 import data.Usuario;
 
 public class Home extends javax.swing.JFrame {
-
+    
+    private final Usuario usuario;
+    
     public Home(Usuario usuario) {
         initComponents();
+        this.usuario = usuario;
         lblSaudacao.setText("Bem-Vindo, " + usuario.getNome() + "!");
     }
 
@@ -109,14 +112,13 @@ public class Home extends javax.swing.JFrame {
 
     private void btnAcademiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcademiaActionPerformed
         if (evt.getSource() == btnAcademia) {
-            new TreinoMenu().setVisible(true);
+            new TreinoMenu(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnAcademiaActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            Usuario usuario = new Usuario();
             new Home(usuario).setVisible(true);
             dispose();
         }

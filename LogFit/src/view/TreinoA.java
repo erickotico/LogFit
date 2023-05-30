@@ -5,8 +5,11 @@ import javax.swing.JOptionPane;
 
 public class TreinoA extends javax.swing.JFrame {
 
-    public TreinoA() {
+    private final Usuario usuario;
+    
+    public TreinoA(Usuario usuario) {
         initComponents();
+        this.usuario = usuario;
     }
 
     @SuppressWarnings("unchecked")
@@ -164,21 +167,21 @@ public class TreinoA extends javax.swing.JFrame {
 
     private void btnProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximoActionPerformed
         if (evt.getSource() == btnProximo) {
-            new TreinoB().setVisible(true);
+            new TreinoB(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnProximoActionPerformed
 
     private void btnAcademiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcademiaActionPerformed
         if (evt.getSource() == btnAcademia) {
-            new TreinoMenu().setVisible(true);
+            new TreinoMenu(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnAcademiaActionPerformed
 
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
         if (evt.getSource() == btnFinalizar) {
-            new TreinoMenu().setVisible(true);
+            new TreinoMenu(usuario).setVisible(true);
             dispose();
             JOptionPane.showMessageDialog(null, "Treino Finalizado com Sucesso!");
         }
@@ -186,7 +189,6 @@ public class TreinoA extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            Usuario usuario = null;
             new Home(usuario).setVisible(true);
             dispose();
         }
