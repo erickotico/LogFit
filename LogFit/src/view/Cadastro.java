@@ -334,6 +334,7 @@ public class Cadastro extends javax.swing.JFrame {
 
             }
         }
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed

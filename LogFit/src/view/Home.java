@@ -4,91 +4,117 @@ import data.Usuario;
 
 public class Home extends javax.swing.JFrame {
 
-    public Home(Usuario usuario) {
+    public Home(Usuario usuario, String login) {
         initComponents();
+        lblSaudacao.setText("Bem-Vindo, " + login + "!");
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblInform = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
+        lblSaudacao = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btnVoltar = new javax.swing.JButton();
+        lblTreinoIcon = new javax.swing.JLabel();
+        lblHomeIcon = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
+        btnAcademia = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LogFit");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(null);
 
+        lblInform.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
+        lblInform.setText("Para Iniciar os Treinos clique no Peso abaixo!");
+        getContentPane().add(lblInform);
+        lblInform.setBounds(180, 50, 410, 80);
+
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(-60, 0, 250, 140);
 
+        lblSaudacao.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        getContentPane().add(lblSaudacao);
+        lblSaudacao.setBounds(180, 20, 340, 80);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tabela.png"))); // NOI18N
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(560, 210, 360, 340);
+        jLabel1.setBounds(570, 210, 360, 340);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IMC.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(500, 0, 420, 230);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pesquisa.png"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(510, 560, 50, 40);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(430, 560, 50, 40);
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/frequencia.png"))); // NOI18N
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(200, -30, 570, 290);
+        jLabel3.setBounds(540, 0, 420, 230);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/grafico.png"))); // NOI18N
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(20, 190, 520, 330);
+        jLabel6.setBounds(10, 160, 520, 370);
 
-        btnVoltar.setText("jButton1");
-        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnVoltar);
-        btnVoltar.setBounds(440, 560, 30, 30);
+        lblTreinoIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Icone_Academia.png"))); // NOI18N
+        getContentPane().add(lblTreinoIcon);
+        lblTreinoIcon.setBounds(510, 560, 30, 40);
+
+        lblHomeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Icone_Home.png"))); // NOI18N
+        getContentPane().add(lblHomeIcon);
+        lblHomeIcon.setBounds(450, 560, 30, 40);
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
         lblBackground.setBounds(0, 0, 970, 640);
 
+        btnAcademia.setText("jButton1");
+        btnAcademia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcademiaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAcademia);
+        btnAcademia.setBounds(510, 570, 30, 30);
+
+        btnHome.setText("jButton1");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnHome);
+        btnHome.setBounds(450, 570, 30, 30);
+
         setSize(new java.awt.Dimension(982, 646));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        if (evt.getSource() == btnVoltar) {
-            new Login().setVisible(true);
+    private void btnAcademiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcademiaActionPerformed
+        if (evt.getSource() == btnAcademia) {
+            new TreinoMenu().setVisible(true);
             dispose();
         }
-    }//GEN-LAST:event_btnVoltarActionPerformed
+    }//GEN-LAST:event_btnAcademiaActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        if (evt.getSource() == btnHome) {
+            new Home().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVoltar;
+    private javax.swing.JButton btnAcademia;
+    private javax.swing.JButton btnHome;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblBackground;
+    private javax.swing.JLabel lblHomeIcon;
+    private javax.swing.JLabel lblInform;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblSaudacao;
+    private javax.swing.JLabel lblTreinoIcon;
     // End of variables declaration//GEN-END:variables
 }
