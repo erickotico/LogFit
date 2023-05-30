@@ -26,10 +26,12 @@ public class TreinoMenu extends javax.swing.JFrame {
         lblLogo = new javax.swing.JLabel();
         lblTreino = new javax.swing.JLabel();
         lblFundo = new javax.swing.JLabel();
-        lblHomeIcon = new javax.swing.JLabel();
         lblTreinoIcon = new javax.swing.JLabel();
+        lblHomeIcon = new javax.swing.JLabel();
+        lblSaida = new javax.swing.JLabel();
         lblBackground = new javax.swing.JLabel();
         btnAcademia = new javax.swing.JButton();
+        btnSaida = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -126,13 +128,17 @@ public class TreinoMenu extends javax.swing.JFrame {
         getContentPane().add(lblFundo);
         lblFundo.setBounds(30, 140, 280, 390);
 
-        lblHomeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Icone_Home.png"))); // NOI18N
-        getContentPane().add(lblHomeIcon);
-        lblHomeIcon.setBounds(450, 560, 30, 40);
-
         lblTreinoIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Icone_Academia.png"))); // NOI18N
         getContentPane().add(lblTreinoIcon);
-        lblTreinoIcon.setBounds(510, 560, 30, 40);
+        lblTreinoIcon.setBounds(470, 560, 30, 40);
+
+        lblHomeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Icone_Home.png"))); // NOI18N
+        getContentPane().add(lblHomeIcon);
+        lblHomeIcon.setBounds(410, 560, 30, 40);
+
+        lblSaida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Icone_Saida.png"))); // NOI18N
+        getContentPane().add(lblSaida);
+        lblSaida.setBounds(530, 560, 30, 40);
 
         lblBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.jpeg"))); // NOI18N
         getContentPane().add(lblBackground);
@@ -145,7 +151,16 @@ public class TreinoMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAcademia);
-        btnAcademia.setBounds(510, 570, 30, 30);
+        btnAcademia.setBounds(470, 570, 30, 30);
+
+        btnSaida.setText("jButton1");
+        btnSaida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaidaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSaida);
+        btnSaida.setBounds(530, 570, 30, 30);
 
         btnHome.setText("jButton1");
         btnHome.addActionListener(new java.awt.event.ActionListener() {
@@ -154,26 +169,11 @@ public class TreinoMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnHome);
-        btnHome.setBounds(450, 570, 30, 30);
+        btnHome.setBounds(410, 570, 30, 30);
 
         setSize(new java.awt.Dimension(982, 646));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAcademiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcademiaActionPerformed
-        if (evt.getSource() == btnAcademia) {
-            new TreinoMenu().setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_btnAcademiaActionPerformed
-
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        if (evt.getSource() == btnHome) {
-            Usuario usuario = null;
-            new Home(usuario).setVisible(true);
-            dispose();
-        }
-    }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         if (evt.getSource() == btnIniciar) {
@@ -196,12 +196,32 @@ public class TreinoMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnIniciar3ActionPerformed
 
+    private void btnAcademiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcademiaActionPerformed
+        if (evt.getSource() == btnAcademia) {
+            new TreinoMenu().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btnAcademiaActionPerformed
+
+    private void btnSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSaidaActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        if (evt.getSource() == btnHome) {
+            Usuario usuario = null;
+            new Home(usuario).setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btnHomeActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAcademia;
     private javax.swing.JButton btnHome;
     private javax.swing.JToggleButton btnIniciar;
     private javax.swing.JToggleButton btnIniciar2;
     private javax.swing.JToggleButton btnIniciar3;
+    private javax.swing.JButton btnSaida;
     private javax.swing.JLabel lblBackground;
     private javax.swing.JLabel lblFundo;
     private javax.swing.JLabel lblFundo1;
@@ -211,6 +231,7 @@ public class TreinoMenu extends javax.swing.JFrame {
     private javax.swing.JLabel lblInfo2;
     private javax.swing.JLabel lblInfo3;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblSaida;
     private javax.swing.JLabel lblTreino;
     private javax.swing.JLabel lblTreinoIcon;
     private javax.swing.JLabel lblTreinoImage;
