@@ -207,7 +207,10 @@ public class TreinoMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAcademiaActionPerformed
 
     private void btnSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaActionPerformed
-        // TODO add your handling code here:
+        if (evt.getSource() == btnSaida) {
+            new Login().setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_btnSaidaActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
