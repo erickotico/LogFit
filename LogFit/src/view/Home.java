@@ -125,8 +125,10 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaActionPerformed
+        if (evt.getSource() == btnSaida) {
             new Login().setVisible(true);
             dispose();
+        }
     }//GEN-LAST:event_btnSaidaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
