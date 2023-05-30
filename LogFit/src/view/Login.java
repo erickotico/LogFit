@@ -138,7 +138,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        if (evt.getSource() == btnLogin) {
+      if (evt.getSource() == btnLogin) {
 
             String senha;
             senha = txtSenha.getText();
