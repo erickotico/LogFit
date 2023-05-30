@@ -155,7 +155,6 @@ public class Login extends javax.swing.JFrame {
                     new Home(usuario).setVisible(true);
                     dispose();
                 }
-                dao.desconectar();
             } else {
                 JOptionPane.showMessageDialog(null, "Erro na conecxão com o banco de dados.");
             }

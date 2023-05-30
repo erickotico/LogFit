@@ -6,7 +6,7 @@ public class Home extends javax.swing.JFrame {
 
     public Home(Usuario usuario) {
         initComponents();
-        lblSaudacao.setText("Bem-Vindo, " + usuario + "!");
+        lblSaudacao.setText("Bem-Vindo, " + usuario.getNome() + "!");
     }
 
     @SuppressWarnings("unchecked")
@@ -116,14 +116,15 @@ public class Home extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            Usuario usuario = null;
+            Usuario usuario = new Usuario();
             new Home(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void btnSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaidaActionPerformed
-        // TODO add your handling code here:
+            new Login().setVisible(true);
+            dispose();
     }//GEN-LAST:event_btnSaidaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -209,7 +209,7 @@ public class TreinoMenu extends javax.swing.JFrame {
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         if (evt.getSource() == btnHome) {
-            Usuario usuario = null;
+            Usuario usuario = new Usuario();
             new Home(usuario).setVisible(true);
             dispose();
         }
