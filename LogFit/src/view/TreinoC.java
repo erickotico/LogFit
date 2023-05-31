@@ -4,10 +4,9 @@ import data.Usuario;
 import javax.swing.JOptionPane;
 
 public class TreinoC extends javax.swing.JFrame {
-    
+
     private final Usuario usuario;
 
-    
     public TreinoC(Usuario usuario) {
         initComponents();
         this.usuario = usuario;
@@ -146,12 +145,12 @@ public class TreinoC extends javax.swing.JFrame {
         if (evt.getSource() == btnFinalizar) {
             new TreinoMenu(usuario).setVisible(true);
             dispose();
-            JOptionPane.showMessageDialog(null, "Parabens "+ usuario.getNome() +" Treino Finalizado com Sucesso!");
+            JOptionPane.showMessageDialog(null, "Parabens " + usuario.getNome() + " Treino Finalizado com Sucesso!");
         }
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-       if (evt.getSource() == btnHome) {
+        if (evt.getSource() == btnHome) {
             new Home(usuario).setVisible(true);
             dispose();
         }

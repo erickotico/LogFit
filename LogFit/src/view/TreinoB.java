@@ -4,9 +4,9 @@ import data.Usuario;
 import javax.swing.JOptionPane;
 
 public class TreinoB extends javax.swing.JFrame {
-    
+
     private final Usuario usuario;
-    
+
     public TreinoB(Usuario usuario) {
         initComponents();
         this.usuario = usuario;
@@ -168,7 +168,7 @@ public class TreinoB extends javax.swing.JFrame {
         if (evt.getSource() == btnFinalizar) {
             new TreinoMenu(usuario).setVisible(true);
             dispose();
-            JOptionPane.showMessageDialog(null,"Parabens "+ usuario.getNome() +" Treino Finalizado com Sucesso!");
+            JOptionPane.showMessageDialog(null, "Parabens " + usuario.getNome() + " Treino Finalizado com Sucesso!");
         }
     }//GEN-LAST:event_btnFinalizarActionPerformed
 

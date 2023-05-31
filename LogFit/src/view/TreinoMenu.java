@@ -5,7 +5,7 @@ import data.Usuario;
 public class TreinoMenu extends javax.swing.JFrame {
 
     private final Usuario usuario;
-    
+
     public TreinoMenu(Usuario usuario) {
         initComponents();
         this.usuario = usuario;

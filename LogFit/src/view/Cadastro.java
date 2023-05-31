@@ -316,7 +316,7 @@ public class Cadastro extends javax.swing.JFrame {
             usuario.setSexo(cmbSexo.getSelectedItem().toString());
             usuario.setLogin(txtLogin.getText());
             usuario.setEmail(txtEmail.getText());
-            
+
             status = dao.conectar(); // FAZENDO A con COM O BANCO.
             if (status == false) {
                 JOptionPane.showMessageDialog(null, "Erro na conexão com o banco de dados");
@@ -334,7 +334,7 @@ public class Cadastro extends javax.swing.JFrame {
 
             }
         }
-        
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed

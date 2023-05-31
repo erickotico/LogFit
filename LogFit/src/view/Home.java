@@ -3,9 +3,9 @@ package view;
 import data.Usuario;
 
 public class Home extends javax.swing.JFrame {
-    
+
     private final Usuario usuario;
-    
+
     public Home(Usuario usuario) {
         initComponents();
         this.usuario = usuario;
