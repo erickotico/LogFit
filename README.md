@@ -30,6 +30,26 @@ O LogFit é uma aplicação de software poderosa e fácil de usar, projetada esp
   <img width="963" height="631" src="LogFit/src/images/telacadastro.png">
 </p>
 
+<p align="center">
+  <img width="963" height="631" src="LogFit/src/images/tela1.png">
+</p>
+
+<p align="center">
+  <img width="963" height="631" src="LogFit/src/images/tela2.png">
+</p>
+
+<p align="center">
+  <img width="963" height="631" src="LogFit/src/images/tela3.png">
+</p>
+
+<p align="center">
+  <img width="963" height="631" src="LogFit/src/images/tela4.png">
+</p>
+
+<p align="center">
+  <img width="963" height="631" src="LogFit/src/images/tela5.png">
+</p>
+
 ## 🤝 Colaboradores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
