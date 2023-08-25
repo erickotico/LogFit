@@ -1,4 +1,6 @@
-# 🏋️‍♀️ LogFit - Programa de Gerenciamento de Academia
+<h1 align="center">
+  🏋️‍♀️<br>LogFit - Programa de Gerenciamento de Academia
+</h1>
 
 Bem-vindo ao repositório do LogFit! Este projeto foi desenvolvido como parte de um trabalho acadêmico e tem como objetivo oferecer um programa de gerenciamento abrangente para academias. O LogFit permite que academias e centros de fitness gerenciem seus membros, treinamentos, pagamentos e muito mais.
 
